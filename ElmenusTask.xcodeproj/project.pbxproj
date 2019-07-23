@@ -22,6 +22,10 @@
 		0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E44022E7A473007B71E9 /* TagsRouter.swift */; };
 		0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E44B22E7B3DD007B71E9 /* TagItemCell.swift */; };
 		0208E44E22E7B3DD007B71E9 /* TagItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0208E44C22E7B3DD007B71E9 /* TagItemCell.xib */; };
+		0208E45522E7C565007B71E9 /* TagsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45422E7C565007B71E9 /* TagsProtocol.swift */; };
+		0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45922E7C7ED007B71E9 /* Tag.swift */; };
+		0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45C22E7C8E5007B71E9 /* TagRespone.swift */; };
+		0208E45F22E7CB2B007B71E9 /* TagsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45E22E7CB2B007B71E9 /* TagsEndPoint.swift */; };
 		876A8122D21B536C00ECA0C8 /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		0208E44022E7A473007B71E9 /* TagsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsRouter.swift; sourceTree = "<group>"; };
 		0208E44B22E7B3DD007B71E9 /* TagItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemCell.swift; sourceTree = "<group>"; };
 		0208E44C22E7B3DD007B71E9 /* TagItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagItemCell.xib; sourceTree = "<group>"; };
+		0208E45422E7C565007B71E9 /* TagsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsProtocol.swift; sourceTree = "<group>"; };
+		0208E45922E7C7ED007B71E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		0208E45C22E7C8E5007B71E9 /* TagRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRespone.swift; sourceTree = "<group>"; };
+		0208E45E22E7CB2B007B71E9 /* TagsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsEndPoint.swift; sourceTree = "<group>"; };
 		9A7ED7D46E471AFB6F079111 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DB4776E440E99A94AD536B /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 		0208E41522E79AF6007B71E9 /* ElmenusTask */ = {
 			isa = PBXGroup;
 			children = (
+				0208E44F22E7C403007B71E9 /* ElmenusEngine */,
 				0208E42D22E79F88007B71E9 /* Configurations */,
 				0208E42222E79AF7007B71E9 /* Info.plist */,
 				0208E42B22E79F51007B71E9 /* Core */,
@@ -229,6 +238,81 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		0208E44F22E7C403007B71E9 /* ElmenusEngine */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45122E7C439007B71E9 /* DomainLayer */,
+				0208E45022E7C42D007B71E9 /* DataLater */,
+			);
+			path = ElmenusEngine;
+			sourceTree = "<group>";
+		};
+		0208E45022E7C42D007B71E9 /* DataLater */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45822E7C7C1007B71E9 /* Service */,
+				0208E45722E7C7B8007B71E9 /* EndPoint */,
+				0208E45622E7C7AB007B71E9 /* Entity */,
+			);
+			path = DataLater;
+			sourceTree = "<group>";
+		};
+		0208E45122E7C439007B71E9 /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45322E7C548007B71E9 /* ItemsProtocol */,
+				0208E45222E7C52C007B71E9 /* TagsProtocol */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		0208E45222E7C52C007B71E9 /* TagsProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45422E7C565007B71E9 /* TagsProtocol.swift */,
+			);
+			path = TagsProtocol;
+			sourceTree = "<group>";
+		};
+		0208E45322E7C548007B71E9 /* ItemsProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ItemsProtocol;
+			sourceTree = "<group>";
+		};
+		0208E45622E7C7AB007B71E9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45B22E7C8C8007B71E9 /* Tags */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		0208E45722E7C7B8007B71E9 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45E22E7CB2B007B71E9 /* TagsEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		0208E45822E7C7C1007B71E9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0208E45B22E7C8C8007B71E9 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45922E7C7ED007B71E9 /* Tag.swift */,
+				0208E45C22E7C8E5007B71E9 /* TagRespone.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
 		55EA18C57A4B7587EF2DF9D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,12 +447,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */,
 				0208E44322E7A473007B71E9 /* TagsPresenter.swift in Sources */,
+				0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */,
 				0208E41922E79AF6007B71E9 /* ViewController.swift in Sources */,
 				0208E44122E7A473007B71E9 /* TagsViewModel.swift in Sources */,
 				0208E44222E7A473007B71E9 /* TagsContract.swift in Sources */,
 				0208E44722E7A473007B71E9 /* TagsLocalizatedStrings.swift in Sources */,
+				0208E45F22E7CB2B007B71E9 /* TagsEndPoint.swift in Sources */,
 				0208E41722E79AF6007B71E9 /* AppDelegate.swift in Sources */,
+				0208E45522E7C565007B71E9 /* TagsProtocol.swift in Sources */,
 				0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */,
 				0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */,
 				0208E44422E7A473007B71E9 /* TagsViewController.swift in Sources */,

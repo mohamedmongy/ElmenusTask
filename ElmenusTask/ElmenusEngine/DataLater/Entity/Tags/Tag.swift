@@ -6,10 +6,25 @@
 //  Copyright © 2019 Mohamed Mongy. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
 
-struct Tag {
+struct Tag: Mappable {
+    
+    //MARK: - MEMBER VARIABLES
     var name: String = ""
     var photoUrl: String = ""
+    
+    //MARK: - INIT
+    init?(map: Map) { }
+        
+    
+    //MARK: - Mapping
+    mutating func mapping(map: Map) {
+        name <- map["tagName"]
+        photoUrl <- map["photoURL"]
+
+    }
+    
+   
 }

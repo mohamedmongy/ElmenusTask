@@ -1,6 +1,19 @@
 PODS:
+  - Alamofire (4.8.2)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya-ObjectMapper (2.8):
+    - Moya-ObjectMapper/Core (= 2.8)
+  - Moya-ObjectMapper/Core (2.8):
+    - Moya (~> 12.0)
+    - ObjectMapper (~> 3.4)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - ObjectMapper (3.5.1)
   - Reachability (3.2)
   - ReachabilitySwift (4.3.1)
+  - Result (4.1.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -13,6 +26,9 @@ PODS:
   - RxSwift (5.0.0)
 
 DEPENDENCIES:
+  - Moya
+  - Moya-ObjectMapper
+  - ObjectMapper
   - Reachability
   - RxCocoa
   - RxReachability
@@ -20,21 +36,31 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Moya
+    - Moya-ObjectMapper
+    - ObjectMapper
     - Reachability
     - ReachabilitySwift
+    - Result
     - RxCocoa
     - RxReachability
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxReachability: 21d3e96f39bc166a21c357e923f47dec148ca97b
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: 796f850b7847130d3db624c5dd387c690d84c120
+PODFILE CHECKSUM: fa2204c4262e4b47f6f732a53daaddd25b0e4579
 
 COCOAPODS: 1.7.0.beta.3

@@ -10,5 +10,9 @@ target 'ElmenusTask' do
     pod 'RxCocoa'
     pod 'Reachability'
     pod 'RxReachability'
+    pod 'Moya'
+    pod 'Moya-ObjectMapper'
+    pod 'ObjectMapper'
 
+    
 end
