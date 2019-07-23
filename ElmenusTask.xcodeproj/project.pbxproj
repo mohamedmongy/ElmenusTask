@@ -20,6 +20,8 @@
 		0208E44622E7A473007B71E9 /* TagsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E43C22E7A473007B71E9 /* TagsInteractor.swift */; };
 		0208E44722E7A473007B71E9 /* TagsLocalizatedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E43E22E7A473007B71E9 /* TagsLocalizatedStrings.swift */; };
 		0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E44022E7A473007B71E9 /* TagsRouter.swift */; };
+		0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E44B22E7B3DD007B71E9 /* TagItemCell.swift */; };
+		0208E44E22E7B3DD007B71E9 /* TagItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0208E44C22E7B3DD007B71E9 /* TagItemCell.xib */; };
 		876A8122D21B536C00ECA0C8 /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		0208E43C22E7A473007B71E9 /* TagsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsInteractor.swift; sourceTree = "<group>"; };
 		0208E43E22E7A473007B71E9 /* TagsLocalizatedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsLocalizatedStrings.swift; sourceTree = "<group>"; };
 		0208E44022E7A473007B71E9 /* TagsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsRouter.swift; sourceTree = "<group>"; };
+		0208E44B22E7B3DD007B71E9 /* TagItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemCell.swift; sourceTree = "<group>"; };
+		0208E44C22E7B3DD007B71E9 /* TagItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagItemCell.xib; sourceTree = "<group>"; };
 		9A7ED7D46E471AFB6F079111 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DB4776E440E99A94AD536B /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +146,7 @@
 				0208E43222E7A473007B71E9 /* ViewModel */,
 				0208E43422E7A473007B71E9 /* Contract */,
 				0208E43622E7A473007B71E9 /* Presenter */,
-				0208E43822E7A473007B71E9 /* ViewController */,
+				0208E44922E7B376007B71E9 /* View */,
 				0208E43B22E7A473007B71E9 /* Interactor */,
 				0208E43D22E7A473007B71E9 /* Localization */,
 				0208E43F22E7A473007B71E9 /* Router */,
@@ -205,6 +209,24 @@
 				0208E44022E7A473007B71E9 /* TagsRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		0208E44922E7B376007B71E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0208E44A22E7B387007B71E9 /* Cell */,
+				0208E43822E7A473007B71E9 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0208E44A22E7B387007B71E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0208E44B22E7B3DD007B71E9 /* TagItemCell.swift */,
+				0208E44C22E7B3DD007B71E9 /* TagItemCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		55EA18C57A4B7587EF2DF9D5 /* Pods */ = {
@@ -287,6 +309,7 @@
 				0208E42122E79AF7007B71E9 /* LaunchScreen.storyboard in Resources */,
 				0208E44522E7A473007B71E9 /* TagsViewController.xib in Resources */,
 				0208E41E22E79AF7007B71E9 /* Assets.xcassets in Resources */,
+				0208E44E22E7B3DD007B71E9 /* TagItemCell.xib in Resources */,
 				0208E41C22E79AF6007B71E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +370,7 @@
 				0208E44722E7A473007B71E9 /* TagsLocalizatedStrings.swift in Sources */,
 				0208E41722E79AF6007B71E9 /* AppDelegate.swift in Sources */,
 				0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */,
+				0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */,
 				0208E44422E7A473007B71E9 /* TagsViewController.swift in Sources */,
 				0208E44622E7A473007B71E9 /* TagsInteractor.swift in Sources */,
 			);

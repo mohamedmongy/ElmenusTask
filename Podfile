@@ -8,5 +8,7 @@ target 'ElmenusTask' do
   # Pods for ElmenusTask
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'Reachability'
+    pod 'RxReachability'
 
 end

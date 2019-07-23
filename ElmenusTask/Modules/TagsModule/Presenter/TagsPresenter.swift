@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 
+
 class TagsPresenter: TagsPresenterProtocol {
 
     
@@ -33,12 +34,8 @@ class TagsPresenter: TagsPresenterProtocol {
     //MARK:- Functions
     func attach() {
         
-        let intentLoad = viewController?.loadIntent().subscribe(onNext:  { () in
-           
-        }, onError:  nil, onCompleted: nil, onDisposed: nil)
-            .disposed(by: disposeBag)
-       
     }
+    
     
     //MARK:- Private functions
 

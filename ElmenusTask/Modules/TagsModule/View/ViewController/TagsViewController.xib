@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagsViewController" customModule="ElmenusTask" customModuleProvider="target">
+            <connections>
+                <outlet property="itemsCollectionView" destination="CdP-AT-ycd" id="Qp6-nl-QxF"/>
+                <outlet property="loadingIndicator" destination="UET-1P-GNb" id="drn-Su-lWK"/>
+                <outlet property="tagsCollectionView" destination="Nd0-EB-KeJ" id="aE2-QN-IvY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="xt3-TL-vMn">
+                    <rect key="frame" x="0.0" y="40" width="375" height="200"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nd0-EB-KeJ">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="200"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ydz-qS-G3u">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="UET-1P-GNb">
+                            <rect key="frame" x="355" y="0.0" width="20" height="200"/>
+                            <color key="color" red="1" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="7EC-2k-4Ti"/>
+                    </constraints>
+                </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-AT-ycd">
+                    <rect key="frame" x="0.0" y="270" width="375" height="203"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="203" id="lBY-PZ-FSI"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SCV-zI-zIL">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="81V-AD-vv5"/>
+                <constraint firstItem="xt3-TL-vMn" firstAttribute="top" secondItem="oEW-Ep-cf0" secondAttribute="top" constant="20" id="H8B-Aa-OfQ"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="top" secondItem="xt3-TL-vMn" secondAttribute="bottom" constant="30" id="OXK-Z3-QJK"/>
+                <constraint firstItem="oEW-Ep-cf0" firstAttribute="trailing" secondItem="xt3-TL-vMn" secondAttribute="trailing" id="fsl-Ym-asL"/>
+                <constraint firstItem="xt3-TL-vMn" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="nNF-da-rFa"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="trailing" secondItem="oEW-Ep-cf0" secondAttribute="trailing" id="p4g-ih-8VB"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="oEW-Ep-cf0"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>

@@ -39,7 +39,5 @@ protocol TagsInteractorProtocol: class {
 
 //MARK: - View
 protocol TagsViewControllerProtocol: class {
-
   var presenter: TagsPresenterProtocol?  { get set }
-  func loadIntent() -> Observable<Void>
 }
