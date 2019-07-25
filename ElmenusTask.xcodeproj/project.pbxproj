@@ -26,7 +26,11 @@
 		0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45922E7C7ED007B71E9 /* Tag.swift */; };
 		0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45C22E7C8E5007B71E9 /* TagRespone.swift */; };
 		0208E45F22E7CB2B007B71E9 /* TagsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208E45E22E7CB2B007B71E9 /* TagsEndPoint.swift */; };
-		876A8122D21B536C00ECA0C8 /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */; };
+		020905DE22E9A73E00585518 /* Reachability+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020905DD22E9A73E00585518 /* Reachability+Shared.swift */; };
+		020905E122E9A86B00585518 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020905E022E9A86B00585518 /* ErrorType.swift */; };
+		0209949A22E8B05C00A17825 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209949922E8B05C00A17825 /* APIService.swift */; };
+		0209949C22E8B10B00A17825 /* TagsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209949B22E8B10B00A17825 /* TagsService.swift */; };
+		5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +55,13 @@
 		0208E45922E7C7ED007B71E9 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		0208E45C22E7C8E5007B71E9 /* TagRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRespone.swift; sourceTree = "<group>"; };
 		0208E45E22E7CB2B007B71E9 /* TagsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsEndPoint.swift; sourceTree = "<group>"; };
-		9A7ED7D46E471AFB6F079111 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
-		F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8DB4776E440E99A94AD536B /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
+		020905DD22E9A73E00585518 /* Reachability+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+Shared.swift"; sourceTree = "<group>"; };
+		020905E022E9A86B00585518 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+		0209949922E8B05C00A17825 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		0209949B22E8B10B00A17825 /* TagsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsService.swift; sourceTree = "<group>"; };
+		4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
+		DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876A8122D21B536C00ECA0C8 /* Pods_ElmenusTask.framework in Frameworks */,
+				5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +82,7 @@
 				0208E41522E79AF6007B71E9 /* ElmenusTask */,
 				0208E41422E79AF6007B71E9 /* Products */,
 				55EA18C57A4B7587EF2DF9D5 /* Pods */,
-				DBB9536C16E0CA7A4BF48F2C /* Frameworks */,
+				05E522E662F8506207F1533A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +129,7 @@
 		0208E42B22E79F51007B71E9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				020905DB22E9A70600585518 /* Extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -300,6 +309,8 @@
 		0208E45822E7C7C1007B71E9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0209949922E8B05C00A17825 /* APIService.swift */,
+				0209949B22E8B10B00A17825 /* TagsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -313,21 +324,46 @@
 			path = Tags;
 			sourceTree = "<group>";
 		};
+		020905DB22E9A70600585518 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				020905DF22E9A84700585518 /* Error */,
+				020905DC22E9A71300585518 /* Reachability */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		020905DC22E9A71300585518 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				020905DD22E9A73E00585518 /* Reachability+Shared.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		020905DF22E9A84700585518 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				020905E022E9A86B00585518 /* ErrorType.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		05E522E662F8506207F1533A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		55EA18C57A4B7587EF2DF9D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A7ED7D46E471AFB6F079111 /* Pods-ElmenusTask.debug.xcconfig */,
-				F8DB4776E440E99A94AD536B /* Pods-ElmenusTask.release.xcconfig */,
+				718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */,
+				DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		DBB9536C16E0CA7A4BF48F2C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F78ED31586CE4EAFEA5DE410 /* Pods_ElmenusTask.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,11 +373,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0208E42522E79AF7007B71E9 /* Build configuration list for PBXNativeTarget "ElmenusTask" */;
 			buildPhases = (
-				579102A54B9EF99B42F6439F /* [CP] Check Pods Manifest.lock */,
+				5A58CB19A85EB50BEE29EA28 /* [CP] Check Pods Manifest.lock */,
 				0208E40F22E79AF6007B71E9 /* Sources */,
 				0208E41022E79AF6007B71E9 /* Frameworks */,
 				0208E41122E79AF6007B71E9 /* Resources */,
-				520F94FFE256840EFCB9743C /* [CP] Embed Pods Frameworks */,
+				4D0E8C0B97F8F2D7CAC7AD8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,7 +437,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		520F94FFE256840EFCB9743C /* [CP] Embed Pods Frameworks */ = {
+		4D0E8C0B97F8F2D7CAC7AD8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,7 +454,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		579102A54B9EF99B42F6439F /* [CP] Check Pods Manifest.lock */ = {
+		5A58CB19A85EB50BEE29EA28 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,16 +484,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */,
+				0209949A22E8B05C00A17825 /* APIService.swift in Sources */,
 				0208E44322E7A473007B71E9 /* TagsPresenter.swift in Sources */,
 				0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */,
+				020905DE22E9A73E00585518 /* Reachability+Shared.swift in Sources */,
 				0208E41922E79AF6007B71E9 /* ViewController.swift in Sources */,
 				0208E44122E7A473007B71E9 /* TagsViewModel.swift in Sources */,
 				0208E44222E7A473007B71E9 /* TagsContract.swift in Sources */,
 				0208E44722E7A473007B71E9 /* TagsLocalizatedStrings.swift in Sources */,
 				0208E45F22E7CB2B007B71E9 /* TagsEndPoint.swift in Sources */,
+				020905E122E9A86B00585518 /* ErrorType.swift in Sources */,
 				0208E41722E79AF6007B71E9 /* AppDelegate.swift in Sources */,
 				0208E45522E7C565007B71E9 /* TagsProtocol.swift in Sources */,
 				0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */,
+				0209949C22E8B10B00A17825 /* TagsService.swift in Sources */,
 				0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */,
 				0208E44422E7A473007B71E9 /* TagsViewController.swift in Sources */,
 				0208E44622E7A473007B71E9 /* TagsInteractor.swift in Sources */,
@@ -604,38 +644,42 @@
 		};
 		0208E42622E79AF7007B71E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A7ED7D46E471AFB6F079111 /* Pods-ElmenusTask.debug.xcconfig */;
+			baseConfigurationReference = 718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S6327WG95;
 				INFOPLIST_FILE = ElmenusTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ElmenusTask;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ElmenusTaske;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		0208E42722E79AF7007B71E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8DB4776E440E99A94AD536B /* Pods-ElmenusTask.release.xcconfig */;
+			baseConfigurationReference = DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S6327WG95;
 				INFOPLIST_FILE = ElmenusTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ElmenusTask;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ElmenusTaske;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

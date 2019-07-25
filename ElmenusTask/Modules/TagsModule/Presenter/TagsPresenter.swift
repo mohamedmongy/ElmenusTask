@@ -33,10 +33,18 @@ class TagsPresenter: TagsPresenterProtocol {
     
     //MARK:- Functions
     func attach() {
-        
+        fetchTagsFirstPage()
     }
     
     
     //MARK:- Private functions
+    private func fetchTagsFirstPage() {
+        interactor?.getTags(pageNumber: "0")
+            .subscribe(onNext: { tags in
+            print("tags >>>>>>>>>> \(tags)")
+        }, onError: { error in
+            print("tags >>>>>>>>>> \(error)")
+        }).disposed(by: disposeBag)
+    }
 
 }

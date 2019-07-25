@@ -22,7 +22,10 @@ extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
         ]
     }
     
-    var authorizationType: AuthorizationType { return .bearer }
+    
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
     
     var baseURL: URL {
         guard let  url  = URL(string: "https://elmenus-assignment.getsandbox.com/tags") else { return URL(string: "")!}
@@ -32,7 +35,7 @@ extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
     var path: String {
         switch self {
         case .tags(pageNumber: let pageNumber):
-            return pageNumber
+            return "/\(pageNumber)"
         }
     }
     
@@ -50,7 +53,8 @@ extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
     var task: Task {
         switch self {
         case .tags:
-            return .requestParameters(parameters: [:], encoding: URLEncoding.queryString)
+            return .requestPlain
         }
     }
 }
+

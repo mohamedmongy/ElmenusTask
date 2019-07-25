@@ -30,7 +30,7 @@ protocol TagsPresenterProtocol: class {
 
 
 //MARK: - Interactor
-protocol TagsInteractorProtocol: class {
+protocol TagsInteractorProtocol: TagsProtocol {
 
     
 }

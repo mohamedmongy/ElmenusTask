@@ -14,7 +14,7 @@ extension Reachability: ReactiveCompatible { }
 
 public extension Reactive where Base: Reachability {
 
-    static var reachabilityChanged: Observable<Reachability> {
+  public static var reachabilityChanged: Observable<Reachability> {
     return NotificationCenter.default.rx.notification(Notification.Name.reachabilityChanged)
       .flatMap { notification -> Observable<Reachability> in
         guard let reachability = notification.object as? Reachability else {
@@ -24,23 +24,23 @@ public extension Reactive where Base: Reachability {
     }
   }
 
-    static var status: Observable<Reachability.Connection> {
+  public static var status: Observable<Reachability.Connection> {
     return reachabilityChanged
       .map { $0.connection }
   }
 
-    static var isReachable: Observable<Bool> {
+  public static var isReachable: Observable<Bool> {
     return reachabilityChanged
       .map { $0.connection != .none }
   }
 
-    static var isConnected: Observable<Void> {
+  public static var isConnected: Observable<Void> {
     return isReachable
       .filter { $0 }
       .map { _ in Void() }
   }
 
-    static var isDisconnected: Observable<Void> {
+  public static var isDisconnected: Observable<Void> {
     return isReachable
       .filter { !$0 }
       .map { _ in Void() }
@@ -49,7 +49,7 @@ public extension Reactive where Base: Reachability {
 
 public extension Reactive where Base: Reachability {
 
-    var reachabilityChanged: Observable<Reachability> {
+  public var reachabilityChanged: Observable<Reachability> {
     return NotificationCenter.default.rx.notification(Notification.Name.reachabilityChanged, object: base)
       .flatMap { notification -> Observable<Reachability> in
         guard let reachability = notification.object as? Reachability else {
@@ -59,23 +59,23 @@ public extension Reactive where Base: Reachability {
     }
   }
 
-    var status: Observable<Reachability.Connection> {
+  public var status: Observable<Reachability.Connection> {
     return reachabilityChanged
       .map { $0.connection }
   }
 
-    var isReachable: Observable<Bool> {
+  public var isReachable: Observable<Bool> {
     return reachabilityChanged
       .map { $0.connection != .none }
   }
 
-    var isConnected: Observable<Void> {
+  public var isConnected: Observable<Void> {
     return isReachable
       .filter { $0 }
       .map { _ in Void() }
   }
 
-    var isDisconnected: Observable<Void> {
+  public var isDisconnected: Observable<Void> {
     return isReachable
       .filter { !$0 }
       .map { _ in Void() }
