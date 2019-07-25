@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="40" width="375" height="200"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nd0-EB-KeJ">
-                            <rect key="frame" x="0.0" y="0.0" width="355" height="200"/>
+                            <rect key="frame" x="0.0" y="0.0" width="346" height="200"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ydz-qS-G3u">
                                 <size key="itemSize" width="50" height="50"/>
@@ -37,19 +37,20 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="UET-1P-GNb">
-                            <rect key="frame" x="355" y="0.0" width="20" height="200"/>
+                            <rect key="frame" x="346" y="0.0" width="29" height="200"/>
                             <color key="color" red="1" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="7EC-2k-4Ti"/>
+                        <constraint firstItem="Nd0-EB-KeJ" firstAttribute="width" secondItem="UET-1P-GNb" secondAttribute="width" multiplier="12:1" id="XyR-6V-BPZ"/>
                     </constraints>
                 </stackView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-AT-ycd">
-                    <rect key="frame" x="0.0" y="270" width="375" height="203"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-AT-ycd">
+                    <rect key="frame" x="0.0" y="410" width="375" height="203"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="203" id="lBY-PZ-FSI"/>
+                        <constraint firstAttribute="height" constant="203" id="31w-3q-8s4"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SCV-zI-zIL">
                         <size key="itemSize" width="50" height="50"/>
@@ -61,12 +62,12 @@
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="81V-AD-vv5"/>
                 <constraint firstItem="xt3-TL-vMn" firstAttribute="top" secondItem="oEW-Ep-cf0" secondAttribute="top" constant="20" id="H8B-Aa-OfQ"/>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="top" secondItem="xt3-TL-vMn" secondAttribute="bottom" constant="30" id="OXK-Z3-QJK"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="trailing" secondItem="oEW-Ep-cf0" secondAttribute="trailing" id="P50-Pn-y0p"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="eeC-h1-Ial"/>
+                <constraint firstItem="oEW-Ep-cf0" firstAttribute="bottom" secondItem="CdP-AT-ycd" secondAttribute="bottom" constant="54" id="ewj-2C-uId"/>
                 <constraint firstItem="oEW-Ep-cf0" firstAttribute="trailing" secondItem="xt3-TL-vMn" secondAttribute="trailing" id="fsl-Ym-asL"/>
                 <constraint firstItem="xt3-TL-vMn" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="nNF-da-rFa"/>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="trailing" secondItem="oEW-Ep-cf0" secondAttribute="trailing" id="p4g-ih-8VB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="oEW-Ep-cf0"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>

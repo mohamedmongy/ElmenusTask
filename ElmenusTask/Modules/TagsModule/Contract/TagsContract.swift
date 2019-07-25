@@ -40,4 +40,6 @@ protocol TagsInteractorProtocol: TagsProtocol {
 //MARK: - View
 protocol TagsViewControllerProtocol: class {
   var presenter: TagsPresenterProtocol?  { get set }
+  func startAnimating()
+  func stopAnimating()
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SDWebImage
 
 
 class TagItemCell: UICollectionViewCell {
@@ -29,6 +30,8 @@ extension TagItemCell {
     
     func configure(tag: Tag) {
         tagItemNameLbl.text = tag.name
-//        tagItemImgView.image.
+        guard let url = URL(string: tag.photoUrl) else { return }
+        guard let image = UIImage(named: "") else { return }
+        tagItemImgView.sd_setImage(with: url, placeholderImage: image)
     }
 }

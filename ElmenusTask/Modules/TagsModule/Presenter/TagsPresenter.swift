@@ -39,11 +39,15 @@ class TagsPresenter: TagsPresenterProtocol {
     
     //MARK:- Private functions
     private func fetchTagsFirstPage() {
-        interactor?.getTags(pageNumber: "0")
-            .subscribe(onNext: { tags in
-            print("tags >>>>>>>>>> \(tags)")
+        viewController?.startAnimating()
+        guard let interactor = interactor else { return }
+        interactor.getTags(pageNumber: "0")
+            .subscribe(onNext: { [weak self] tags in
+                self?.viewController?.stopAnimating()
+                self?.viewModel.tags.accept(tags)
         }, onError: { error in
             print("tags >>>>>>>>>> \(error)")
+            self.viewController?.stopAnimating()
         }).disposed(by: disposeBag)
     }
 

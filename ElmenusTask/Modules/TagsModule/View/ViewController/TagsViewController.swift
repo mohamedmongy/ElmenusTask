@@ -31,6 +31,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         super.viewDidLoad()
         registerCollectionViewCell()
         setCollectionViewFlowLayout()
+        BindToViewModelTags()
         presenter?.attach()
     }
     
@@ -38,7 +39,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     
     
     //MARK: - Binding Datasource
-    private func BindToViewModelGenres() {
+    private func BindToViewModelTags() {
         guard let presenter = presenter else { return }
         presenter.viewModel.tags
             .bind(to: tagsCollectionView.rx.items) { collectionView, index, tag in
@@ -48,6 +49,17 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
                 return cell
             }
             .disposed(by: disposeBag)
+    }
+    
+    
+    
+    //MARK: - Loading Indicator
+    func startAnimating() {
+        loadingIndicator.startAnimating()
+    }
+
+    func stopAnimating() {
+        loadingIndicator.stopAnimating()
     }
     
     

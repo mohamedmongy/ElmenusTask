@@ -15,6 +15,6 @@ target 'ElmenusTask' do
     pod 'ReachabilitySwift', '~> 4.3.0'
     pod 'Moya-ObjectMapper/RxSwift', '~> 2.8.0'
     pod 'ObjectMapper', '~> 3.4'
-
+    pod 'SDWebImage'
     
 end
