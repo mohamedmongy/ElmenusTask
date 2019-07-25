@@ -26,10 +26,6 @@ class APIService<T> where T:TargetType, T:AccessTokenAuthorizable {
         let endpointClosure = { (target: T) -> Endpoint in
             var defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: target.authentications)
-
-//            _ = try! defaultEndpoint.urlRequest()
-//            request.log()
-
             return defaultEndpoint
         }
 
@@ -43,8 +39,7 @@ class APIService<T> where T:TargetType, T:AccessTokenAuthorizable {
     func request<R:Mappable>(target:T)-> Observable<R> {
 
         
-
-//        if Reachability.shared.connection != .none  {
+        if Reachability.shared.connection != .none  {
             return self.provider.rx.request(target)
                 .do(onSuccess: { response in
                     print("reponse you got >>>>>> \(response)")
@@ -56,12 +51,26 @@ class APIService<T> where T:TargetType, T:AccessTokenAuthorizable {
                 .mapObject(R.self)
                 .catchError { error in
                     print("Error you got >>>>>> \(error.localizedDescription)")
-                    return Observable<R>.error(ErrorType.unkown)
+
+                    guard let moyaError = error as? MoyaError else { return Observable<R>.error(ErrorType.unkown) }
+                    
+                    switch moyaError {
+                    case .statusCode( let response):
+                        if let res = try? response.mapObject(R.self) {
+                            return Observable.just(res)
+                        }
+                        else {
+                            return Observable<R>.error(ErrorType.unkown)
+                        }
+                    default:
+                        return Observable<R>.error(ErrorType.unkown)
+                    }
               }
-//        }
-//        else {
-//            return Observable<R>.error(ErrorType.noInternet)
-//        }
+        }
+        else {
+            return Observable<R>.error(ErrorType.noInternet)
+        }
+    
         
     }
 

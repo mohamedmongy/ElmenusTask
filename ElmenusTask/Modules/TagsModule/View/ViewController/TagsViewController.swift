@@ -36,6 +36,22 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     
     
     
+    
+    //MARK: - Binding Datasource
+    private func BindToViewModelGenres() {
+        guard let presenter = presenter else { return }
+        presenter.viewModel.tags
+            .bind(to: tagsCollectionView.rx.items) { collectionView, index, tag in
+                let indexPath = IndexPath(row: index, section: 0)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TagItemCell.self), for: indexPath) as! TagItemCell
+                cell.configure(tag: tag)
+                return cell
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    
+    
     //MARK: - Collection View FlowLayout Methods
     private func setCollectionViewFlowLayout() {
         setTagsCollectionViewFlowLayout()

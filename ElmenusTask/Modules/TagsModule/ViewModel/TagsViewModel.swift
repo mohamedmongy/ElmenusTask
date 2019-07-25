@@ -6,9 +6,12 @@
 //
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+
 
 struct TagsViewModel {
     
     let localization =  TagsLocalization()
+    let tags = BehaviorRelay<[Tag]>(value: [])
 }

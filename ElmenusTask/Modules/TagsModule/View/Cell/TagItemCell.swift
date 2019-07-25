@@ -27,8 +27,8 @@ class TagItemCell: UICollectionViewCell {
 
 extension TagItemCell {
     
-    func configureCell() {
-//        genreImage.image = genre.image
-//        genreNameLbl.text = genre.name
+    func configure(tag: Tag) {
+        tagItemNameLbl.text = tag.name
+//        tagItemImgView.image.
     }
 }
