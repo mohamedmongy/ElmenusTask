@@ -11,7 +11,11 @@ import RxSwift
 
 
 class TagsService: APIService<TagsEndPoint> {
+    
     func fetchTags(pageNumber: String) -> Observable<TagRespone> {
         return  request(target: .tags(pageNumber: pageNumber))
     }
+    
 }
+
+

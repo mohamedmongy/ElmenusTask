@@ -11,12 +11,19 @@ import ObjectMapper
 
 struct Tag: Mappable {
     
+    
     //MARK: - MEMBER VARIABLES
     var name: String = ""
     var photoUrl: String = ""
     
+    
     //MARK: - INIT
     init?(map: Map) { }
+    
+    init(name: String, urlStr: String) {
+        self.name = name
+        self.photoUrl = urlStr
+    }
         
     
     //MARK: - Mapping

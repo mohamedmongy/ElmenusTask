@@ -26,6 +26,8 @@ class APIService<T> where T:TargetType, T:AccessTokenAuthorizable {
         let endpointClosure = { (target: T) -> Endpoint in
             var defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: target.authentications)
+            let request = try! defaultEndpoint.urlRequest()
+            request.log()
             return defaultEndpoint
         }
 
@@ -40,7 +42,8 @@ class APIService<T> where T:TargetType, T:AccessTokenAuthorizable {
 
         
         if Reachability.shared.connection != .none  {
-            return self.provider.rx.request(target)
+            return  self.provider.rx.request(target)
+            
                 .do(onSuccess: { response in
                     print("reponse you got >>>>>> \(response)")
                 },onError: { error in
@@ -53,7 +56,7 @@ class APIService<T> where T:TargetType, T:AccessTokenAuthorizable {
                     print("Error you got >>>>>> \(error.localizedDescription)")
 
                     guard let moyaError = error as? MoyaError else { return Observable<R>.error(ErrorType.unkown) }
-                    
+
                     switch moyaError {
                     case .statusCode( let response):
                         if let res = try? response.mapObject(R.self) {
@@ -90,5 +93,17 @@ extension AccessTokenAuthorizable {
             return ["Authorization": "Bearer "]
         }
 
+    }
+}
+
+
+
+public extension URLRequest {
+    public func log() {
+        print("-----------------------------------------")
+        print("\(httpMethod ?? "") \(self)")
+        print("BODY \n \(httpBody?.description ?? "")")
+        print("HEADERS \n \(allHTTPHeaderFields ?? [:])")
+        print("-----------------------------------------")
     }
 }

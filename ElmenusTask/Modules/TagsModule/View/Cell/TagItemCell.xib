@@ -46,7 +46,6 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="tagItemImgView" destination="hln-qb-Ceg" id="4v9-nD-zmH"/>
-                <outlet property="tagItemName" destination="lmp-IF-mAY" id="abq-JY-4l3"/>
                 <outlet property="tagItemNameLbl" destination="lmp-IF-mAY" id="h2a-CU-yef"/>
             </connections>
             <point key="canvasLocation" x="105.79710144927537" y="81.696428571428569"/>

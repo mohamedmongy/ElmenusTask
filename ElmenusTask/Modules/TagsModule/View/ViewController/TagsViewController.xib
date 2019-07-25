@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,6 +41,7 @@
                             <color key="color" red="1" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="7EC-2k-4Ti"/>
                         <constraint firstItem="Nd0-EB-KeJ" firstAttribute="width" secondItem="UET-1P-GNb" secondAttribute="width" multiplier="12:1" id="XyR-6V-BPZ"/>
@@ -60,13 +61,14 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="xt3-TL-vMn" firstAttribute="top" secondItem="oEW-Ep-cf0" secondAttribute="top" constant="20" id="H8B-Aa-OfQ"/>
                 <constraint firstItem="CdP-AT-ycd" firstAttribute="trailing" secondItem="oEW-Ep-cf0" secondAttribute="trailing" id="P50-Pn-y0p"/>
                 <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="eeC-h1-Ial"/>
                 <constraint firstItem="oEW-Ep-cf0" firstAttribute="bottom" secondItem="CdP-AT-ycd" secondAttribute="bottom" constant="54" id="ewj-2C-uId"/>
                 <constraint firstItem="oEW-Ep-cf0" firstAttribute="trailing" secondItem="xt3-TL-vMn" secondAttribute="trailing" id="fsl-Ym-asL"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="mPt-qe-XH8"/>
                 <constraint firstItem="xt3-TL-vMn" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="nNF-da-rFa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="oEW-Ep-cf0"/>

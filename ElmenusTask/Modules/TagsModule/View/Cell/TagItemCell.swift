@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import SDWebImage
+import Kingfisher
 
 
 class TagItemCell: UICollectionViewCell {
@@ -31,7 +31,7 @@ extension TagItemCell {
     func configure(tag: Tag) {
         tagItemNameLbl.text = tag.name
         guard let url = URL(string: tag.photoUrl) else { return }
-        guard let image = UIImage(named: "") else { return }
-        tagItemImgView.sd_setImage(with: url, placeholderImage: image)
+        tagItemImgView.kf.indicatorType = .activity
+        tagItemImgView.kf.setImage(with: url)
     }
 }

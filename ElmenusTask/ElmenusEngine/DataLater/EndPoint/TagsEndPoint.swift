@@ -16,17 +16,6 @@ enum TagsEndPoint {
 extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
     
     
-    var headers: [String : String]? {
-        return [
-            "Content-Type":"application/json"
-        ]
-    }
-    
-    
-    var authorizationType: AuthorizationType {
-        return .bearer
-    }
-    
     var baseURL: URL {
         guard let  url  = URL(string: "https://elmenus-assignment.getsandbox.com/tags") else { return URL(string: "")!}
         return url
@@ -56,5 +45,16 @@ extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
             return .requestPlain
         }
     }
+    
+    var headers: [String : String]? {
+        return [
+            "Content-Type":"application/json"
+        ]
+    }
+    
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+    
 }
 
