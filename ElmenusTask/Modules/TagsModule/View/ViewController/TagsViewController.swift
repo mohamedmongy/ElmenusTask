@@ -19,7 +19,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
-    
+    @IBOutlet weak var itemsLoadingIndicator: UIActivityIndicatorView!
     
     
     
@@ -38,6 +38,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         handleItemsCollectionViewItemSelection()
         handleTagsCollectionVieweReachLastElement()
         BindToViewModelTags()
+        BindToViewModelItems()
         presenter?.attach()
     }
     
@@ -52,6 +53,20 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
                 let indexPath = IndexPath(row: index, section: 0)
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TagItemCell.self), for: indexPath) as! TagItemCell
                 cell.configure(tag: tag)
+                return cell
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    
+    
+    private func BindToViewModelItems() {
+        guard let presenter = presenter else { return }
+        presenter.viewModel.items
+            .bind(to: itemsCollectionView.rx.items) { collectionView, index, item in
+                let indexPath = IndexPath(row: index, section: 0)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TagItemCell.self), for: indexPath) as! TagItemCell
+                cell.configure(item: item)
                 return cell
             }
             .disposed(by: disposeBag)
@@ -158,6 +173,34 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     
     func stopAnimating() {
         loadingIndicator.stopAnimating()
+    }
+    
+    func startAnimatingItemsIndicator() {
+        itemsLoadingIndicator.startAnimating()
+    }
+    
+    func stopAnimatingItemsIndicator() {
+        itemsLoadingIndicator.stopAnimating()
+    }
+    
+    
+    
+    //MARK: - Error Message
+    func showDefaultAlert(title:String?,message:String?, actionBlock:(()->Void)? = nil) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title:"ok", style: .default
+        ) { (action) in
+            alertController.dismiss(animated: true){
+            }
+            actionBlock?()
+        }
+        
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true) {
+        }
     }
     
     

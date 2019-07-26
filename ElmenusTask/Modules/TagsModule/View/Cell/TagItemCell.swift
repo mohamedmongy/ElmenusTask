@@ -35,3 +35,15 @@ extension TagItemCell {
         tagItemImgView.kf.setImage(with: url)
     }
 }
+
+
+extension TagItemCell {
+    
+    func configure(item: Item) {
+        tagItemNameLbl.text = item.name
+        guard let url = URL(string: item.photoUrl) else { return }
+        tagItemImgView.kf.indicatorType = .activity
+        tagItemImgView.kf.setImage(with: url)
+    }
+    
+}

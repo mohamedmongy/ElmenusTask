@@ -40,7 +40,10 @@ protocol TagsInteractorProtocol: TagsProtocol, ItemsProtocol, RealmProtocol {
 
 //MARK: - View
 protocol TagsViewControllerProtocol: class {
-  var presenter: TagsPresenterProtocol?  { get set }
-  func startAnimating()
-  func stopAnimating()
+    var presenter: TagsPresenterProtocol?  { get set }
+    func startAnimating()
+    func stopAnimating()
+    func startAnimatingItemsIndicator()
+    func stopAnimatingItemsIndicator()
+    func showDefaultAlert(title:String?,message:String?, actionBlock:(()->Void)?)
 }

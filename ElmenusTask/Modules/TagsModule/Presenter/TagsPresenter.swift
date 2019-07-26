@@ -45,16 +45,19 @@ class TagsPresenter: TagsPresenterProtocol {
     //MARK:- Public functions
     func getItemsPerTag(name: String) {
         guard let interactor = interactor else { return }
+        viewController?.startAnimatingItemsIndicator()
         interactor.getItems(tagName: name)
             .subscribe(onNext: {  [weak self] items in
+                self?.viewController?.stopAnimatingItemsIndicator()
                 self?.viewModel.items.accept(items)
             }, onError: { error in
                   print("tags >>>>>>>>>> \(error)")
+                  self.viewController?.stopAnimatingItemsIndicator()
+                  
             }).disposed(by: disposeBag)
     }
     
     func fetchTagsNextPage() {
-        
         let nextPage = String(viewModel.page.value)
         viewModel.isLoading.accept(true)
         viewController?.startAnimating()
@@ -102,7 +105,6 @@ class TagsPresenter: TagsPresenterProtocol {
                 }, onError: { error in
                     print("error saving  tags Booooooom")
                 }).disposed(by: disposeBag)
-        
     }
     
 
