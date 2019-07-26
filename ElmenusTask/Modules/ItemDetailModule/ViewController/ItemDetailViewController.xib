@@ -54,6 +54,7 @@
                 <constraint firstItem="9Xe-vL-vah" firstAttribute="top" secondItem="FFy-nd-EEV" secondAttribute="top" constant="62" id="PWm-oK-p0A"/>
                 <constraint firstItem="D33-88-s4g" firstAttribute="top" secondItem="9Xe-vL-vah" secondAttribute="bottom" constant="70" id="XKu-FS-PbN"/>
                 <constraint firstItem="fgy-Xf-csn" firstAttribute="top" secondItem="D33-88-s4g" secondAttribute="bottom" constant="72.5" id="YTa-TB-kOV"/>
+                <constraint firstItem="FFy-nd-EEV" firstAttribute="bottom" secondItem="fgy-Xf-csn" secondAttribute="bottom" constant="201.5" id="bin-zE-gXh"/>
                 <constraint firstItem="fgy-Xf-csn" firstAttribute="leading" secondItem="FFy-nd-EEV" secondAttribute="leading" constant="23" id="cNh-hQ-KjB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="FFy-nd-EEV"/>
