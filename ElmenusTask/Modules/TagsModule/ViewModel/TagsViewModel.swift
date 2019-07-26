@@ -12,6 +12,6 @@ import RxCocoa
 
 struct TagsViewModel {
     
-    let localization =  TagsLocalization()
     let tags = BehaviorRelay<[Tag]>(value: [])
+    let items = BehaviorRelay<[Item]>(value: [])
 }

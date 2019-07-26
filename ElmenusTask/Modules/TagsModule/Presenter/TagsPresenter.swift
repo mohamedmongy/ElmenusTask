@@ -13,6 +13,7 @@ import RxSwift
 class TagsPresenter: TagsPresenterProtocol {
 
     
+    
     //MARK: - Attributes
     weak private var viewController: TagsViewControllerProtocol?
     var interactor: TagsInteractorProtocol?
@@ -31,9 +32,32 @@ class TagsPresenter: TagsPresenterProtocol {
     
     
     
-    //MARK:- Functions
+    //MARK:- Attach
     func attach() {
-        fetchTagsFirstPage()
+         fetchTagsFirstPage()
+    }
+    
+    
+    
+    //MARK:- Public functions
+    func getItemsPerTag(name: String) {
+        guard let interactor = interactor else { return }
+        interactor.getItems(tagName: name)
+            .subscribe(onNext: {  [weak self] items in
+                self?.viewModel.items.accept(items)
+            }, onError: { error in
+                  print("tags >>>>>>>>>> \(error)")
+            }).disposed(by: disposeBag)
+    }
+    
+    func fetchTagsNextPage(pageNumber: String) {
+        interactor?.getTags(pageNumber: pageNumber)
+            .subscribe(onNext: { [weak self] newtags in
+                guard let oldTags = self?.viewModel.tags.value else { return }
+                self?.viewModel.tags.accept(oldTags + newtags)
+            }, onError: { error in
+                 print("tags >>>>>>>>>> \(error)")
+            }).disposed(by: disposeBag)
     }
     
     
@@ -45,10 +69,11 @@ class TagsPresenter: TagsPresenterProtocol {
             .subscribe(onNext: { [weak self] tags in
                 self?.viewController?.stopAnimating()
                 self?.viewModel.tags.accept(tags)
-        }, onError: { error in
-            print("tags >>>>>>>>>> \(error)")
-            self.viewController?.stopAnimating()
-        }).disposed(by: disposeBag)
+                }, onError: { error in
+                    print("tags >>>>>>>>>> \(error)")
+                    self.viewController?.stopAnimating()
+            }).disposed(by: disposeBag)
     }
+    
 
 }

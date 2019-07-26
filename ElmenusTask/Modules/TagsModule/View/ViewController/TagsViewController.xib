@@ -47,11 +47,12 @@
                         <constraint firstItem="Nd0-EB-KeJ" firstAttribute="width" secondItem="UET-1P-GNb" secondAttribute="width" multiplier="12:1" id="XyR-6V-BPZ"/>
                     </constraints>
                 </stackView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-AT-ycd">
-                    <rect key="frame" x="0.0" y="410" width="375" height="203"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-AT-ycd">
+                    <rect key="frame" x="16" y="270" width="343" height="203"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="203" id="31w-3q-8s4"/>
+                        <constraint firstAttribute="height" constant="203" id="QHb-TX-mna"/>
+                        <constraint firstAttribute="width" constant="343" id="ysi-f6-T8X"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SCV-zI-zIL">
                         <size key="itemSize" width="50" height="50"/>
@@ -63,12 +64,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="top" secondItem="xt3-TL-vMn" secondAttribute="bottom" constant="30" id="35y-qM-5XR"/>
                 <constraint firstItem="xt3-TL-vMn" firstAttribute="top" secondItem="oEW-Ep-cf0" secondAttribute="top" constant="20" id="H8B-Aa-OfQ"/>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="trailing" secondItem="oEW-Ep-cf0" secondAttribute="trailing" id="P50-Pn-y0p"/>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="eeC-h1-Ial"/>
-                <constraint firstItem="oEW-Ep-cf0" firstAttribute="bottom" secondItem="CdP-AT-ycd" secondAttribute="bottom" constant="54" id="ewj-2C-uId"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" constant="16" id="bwJ-pD-RXp"/>
                 <constraint firstItem="oEW-Ep-cf0" firstAttribute="trailing" secondItem="xt3-TL-vMn" secondAttribute="trailing" id="fsl-Ym-asL"/>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="mPt-qe-XH8"/>
                 <constraint firstItem="xt3-TL-vMn" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" id="nNF-da-rFa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="oEW-Ep-cf0"/>

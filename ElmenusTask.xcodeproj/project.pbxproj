@@ -30,6 +30,11 @@
 		020905E122E9A86B00585518 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020905E022E9A86B00585518 /* ErrorType.swift */; };
 		0209949A22E8B05C00A17825 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209949922E8B05C00A17825 /* APIService.swift */; };
 		0209949C22E8B10B00A17825 /* TagsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209949B22E8B10B00A17825 /* TagsService.swift */; };
+		02E00A1522EAECF600357240 /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1422EAECF600357240 /* ItemResponse.swift */; };
+		02E00A1722EAED1D00357240 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1622EAED1D00357240 /* Item.swift */; };
+		02E00A1922EAEE8100357240 /* ItemsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1822EAEE8100357240 /* ItemsEndPoint.swift */; };
+		02E00A1B22EAEF8300357240 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1A22EAEF8300357240 /* ItemsService.swift */; };
+		02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1D22EAF04900357240 /* ItemsProtocol.swift */; };
 		5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +64,11 @@
 		020905E022E9A86B00585518 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		0209949922E8B05C00A17825 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0209949B22E8B10B00A17825 /* TagsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsService.swift; sourceTree = "<group>"; };
+		02E00A1422EAECF600357240 /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
+		02E00A1622EAED1D00357240 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		02E00A1822EAEE8100357240 /* ItemsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsEndPoint.swift; sourceTree = "<group>"; };
+		02E00A1A22EAEF8300357240 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
+		02E00A1D22EAF04900357240 /* ItemsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsProtocol.swift; sourceTree = "<group>"; };
 		4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,30 +279,15 @@
 		0208E45122E7C439007B71E9 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0208E45322E7C548007B71E9 /* ItemsProtocol */,
-				0208E45222E7C52C007B71E9 /* TagsProtocol */,
+				02E00A1C22EAF01F00357240 /* Protocol */,
 			);
 			path = DomainLayer;
-			sourceTree = "<group>";
-		};
-		0208E45222E7C52C007B71E9 /* TagsProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				0208E45422E7C565007B71E9 /* TagsProtocol.swift */,
-			);
-			path = TagsProtocol;
-			sourceTree = "<group>";
-		};
-		0208E45322E7C548007B71E9 /* ItemsProtocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ItemsProtocol;
 			sourceTree = "<group>";
 		};
 		0208E45622E7C7AB007B71E9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				02E00A1322EAECD900357240 /* Items */,
 				0208E45B22E7C8C8007B71E9 /* Tags */,
 			);
 			path = Entity;
@@ -302,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				0208E45E22E7CB2B007B71E9 /* TagsEndPoint.swift */,
+				02E00A1822EAEE8100357240 /* ItemsEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -311,6 +307,7 @@
 			children = (
 				0209949922E8B05C00A17825 /* APIService.swift */,
 				0209949B22E8B10B00A17825 /* TagsService.swift */,
+				02E00A1A22EAEF8300357240 /* ItemsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -347,6 +344,24 @@
 				020905E022E9A86B00585518 /* ErrorType.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		02E00A1322EAECD900357240 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A1422EAECF600357240 /* ItemResponse.swift */,
+				02E00A1622EAED1D00357240 /* Item.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		02E00A1C22EAF01F00357240 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0208E45422E7C565007B71E9 /* TagsProtocol.swift */,
+				02E00A1D22EAF04900357240 /* ItemsProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		05E522E662F8506207F1533A /* Frameworks */ = {
@@ -483,10 +498,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E00A1B22EAEF8300357240 /* ItemsService.swift in Sources */,
+				02E00A1722EAED1D00357240 /* Item.swift in Sources */,
 				0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */,
 				0209949A22E8B05C00A17825 /* APIService.swift in Sources */,
 				0208E44322E7A473007B71E9 /* TagsPresenter.swift in Sources */,
 				0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */,
+				02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */,
 				020905DE22E9A73E00585518 /* Reachability+Shared.swift in Sources */,
 				0208E41922E79AF6007B71E9 /* ViewController.swift in Sources */,
 				0208E44122E7A473007B71E9 /* TagsViewModel.swift in Sources */,
@@ -499,7 +517,9 @@
 				0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */,
 				0209949C22E8B10B00A17825 /* TagsService.swift in Sources */,
 				0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */,
+				02E00A1522EAECF600357240 /* ItemResponse.swift in Sources */,
 				0208E44422E7A473007B71E9 /* TagsViewController.swift in Sources */,
+				02E00A1922EAEE8100357240 /* ItemsEndPoint.swift in Sources */,
 				0208E44622E7A473007B71E9 /* TagsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

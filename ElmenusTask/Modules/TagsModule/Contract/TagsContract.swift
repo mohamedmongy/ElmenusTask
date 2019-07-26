@@ -24,13 +24,14 @@ protocol TagsRouterProtocol: class {
 protocol TagsPresenterProtocol: class {
     func attach()
     var viewModel: TagsViewModel  { get }
+    func getItemsPerTag(name: String)
 
 }
 
 
 
 //MARK: - Interactor
-protocol TagsInteractorProtocol: TagsProtocol {
+protocol TagsInteractorProtocol: TagsProtocol, ItemsProtocol {
 
     
 }

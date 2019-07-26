@@ -1,36 +1,37 @@
 //
-//  TagsEndPoint.swift
+//  ItemsEndPoint.swift
 //  ElmenusTask
 //
-//  Created by Mohamed Mongy on 7/24/19.
+//  Created by Mohamed Mongy on 7/26/19.
 //  Copyright © 2019 Mohamed Mongy. All rights reserved.
 //
+
 
 import Moya
 
 
-enum TagsEndPoint {
-    case tags(pageNumber: String)
+enum ItemsEndPoint {
+    case items(tagname: String)
 }
 
-extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
+extension ItemsEndPoint: TargetType, AccessTokenAuthorizable {
     
     
     var baseURL: URL {
-         let  url  = URL(string: "https://elmenus-assignment.getsandbox.com/tags")!
+        let  url  = URL(string: "https://elmenus-assignment.getsandbox.com/items")!
         return url
     }
     
     var path: String {
         switch self {
-        case .tags(pageNumber: let pageNumber):
-            return "/\(pageNumber)"
+        case .items(tagname: let name):
+            return "/\(name)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .tags:
+        case .items:
             return .get
         }
     }
@@ -41,14 +42,14 @@ extension TagsEndPoint: TargetType, AccessTokenAuthorizable {
     
     var task: Task {
         switch self {
-        case .tags:
+        case .items:
             return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         return [
-            "Content-Type":"application/json"
+            "Content-Type" : "application/json"
         ]
     }
     
