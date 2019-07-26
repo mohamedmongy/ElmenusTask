@@ -13,42 +13,43 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagItemCell" id="gTV-IL-0wX" customClass="TagItemCell" customModule="ElmenusTask" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="174" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="174" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-IF-mAY">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-IF-mAY">
+                        <rect key="frame" x="5" y="0.0" width="164" height="70"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="NY7-CJ-k87"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="NY7-CJ-k87"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hln-qb-Ceg">
-                        <rect key="frame" x="0.0" y="50" width="100" height="150"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hln-qb-Ceg">
+                        <rect key="frame" x="5" y="70" width="164" height="130"/>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.12549019607843137" green="0.13333333333333333" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="lmp-IF-mAY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BXW-Ii-NSv"/>
                 <constraint firstAttribute="bottom" secondItem="hln-qb-Ceg" secondAttribute="bottom" id="HSZ-Kb-xUa"/>
-                <constraint firstAttribute="trailing" secondItem="lmp-IF-mAY" secondAttribute="trailing" id="Q3a-bc-C5I"/>
-                <constraint firstAttribute="trailing" secondItem="hln-qb-Ceg" secondAttribute="trailing" id="Y82-rL-qsI"/>
-                <constraint firstItem="lmp-IF-mAY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jcy-Ly-ZUU"/>
+                <constraint firstAttribute="trailing" secondItem="lmp-IF-mAY" secondAttribute="trailing" constant="5" id="Q3a-bc-C5I"/>
+                <constraint firstAttribute="trailing" secondItem="hln-qb-Ceg" secondAttribute="trailing" constant="5" id="Y82-rL-qsI"/>
+                <constraint firstItem="lmp-IF-mAY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="jcy-Ly-ZUU"/>
                 <constraint firstItem="hln-qb-Ceg" firstAttribute="top" secondItem="lmp-IF-mAY" secondAttribute="bottom" id="qs7-cv-19d"/>
-                <constraint firstItem="hln-qb-Ceg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rkx-26-xI3"/>
+                <constraint firstItem="hln-qb-Ceg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="rkx-26-xI3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="174" height="200"/>
             <connections>
                 <outlet property="tagItemImgView" destination="hln-qb-Ceg" id="4v9-nD-zmH"/>
                 <outlet property="tagItemNameLbl" destination="lmp-IF-mAY" id="h2a-CU-yef"/>
             </connections>
-            <point key="canvasLocation" x="105.79710144927537" y="81.696428571428569"/>
+            <point key="canvasLocation" x="126.08695652173914" y="81.696428571428569"/>
         </collectionViewCell>
     </objects>
 </document>

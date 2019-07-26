@@ -125,7 +125,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumInteritemSpacing = 12
         flowLayout.minimumLineSpacing = 12
-        let rowItems:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2.5 : 3.4
+        let rowItems:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 3
         let cellHeight = tagsCollectionView.frame.size.height
         let cellWidth = (tagsCollectionView.frame.size.width / rowItems)
         flowLayout.itemSize = CGSize(width: cellWidth, height:  CGFloat(cellHeight))
@@ -139,7 +139,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumInteritemSpacing = 12
         flowLayout.minimumLineSpacing = 12
-        let rowItems:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2.5 : 3.4
+        let rowItems:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 3
         let cellHeight = itemsCollectionView.frame.size.height
         let cellWidth = (itemsCollectionView.frame.size.width / rowItems)
         flowLayout.itemSize = CGSize(width: cellWidth, height:  CGFloat(cellHeight))

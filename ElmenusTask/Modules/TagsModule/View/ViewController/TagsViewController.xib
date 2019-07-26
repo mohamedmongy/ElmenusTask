@@ -26,7 +26,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nd0-EB-KeJ">
                     <rect key="frame" x="16" y="58" width="343" height="243"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="243" id="ilC-ty-0Ps"/>
                     </constraints>
@@ -46,8 +46,8 @@
                     <color key="color" red="1" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-AT-ycd">
-                    <rect key="frame" x="16" y="336" width="343" height="243"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="16" y="351" width="343" height="243"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="243" id="RTv-TE-hX6"/>
                     </constraints>
@@ -58,9 +58,9 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6Ub-xc-fff">
-                    <rect key="frame" x="177" y="447" width="20" height="20"/>
-                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6Ub-xc-fff">
+                    <rect key="frame" x="177.5" y="462.5" width="20" height="20"/>
+                    <color key="color" red="1" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,7 +73,7 @@
                 <constraint firstItem="oEW-Ep-cf0" firstAttribute="trailing" secondItem="Nd0-EB-KeJ" secondAttribute="trailing" constant="16" id="dDj-rF-KcH"/>
                 <constraint firstItem="Nd0-EB-KeJ" firstAttribute="top" secondItem="oEW-Ep-cf0" secondAttribute="top" constant="38" id="fsI-Nr-81H"/>
                 <constraint firstItem="6Ub-xc-fff" firstAttribute="centerY" secondItem="CdP-AT-ycd" secondAttribute="centerY" id="k4J-zu-xd0"/>
-                <constraint firstItem="CdP-AT-ycd" firstAttribute="top" secondItem="Nd0-EB-KeJ" secondAttribute="bottom" constant="35" id="t3P-aO-M01"/>
+                <constraint firstItem="CdP-AT-ycd" firstAttribute="top" secondItem="Nd0-EB-KeJ" secondAttribute="bottom" constant="50" id="t3P-aO-M01"/>
                 <constraint firstItem="CdP-AT-ycd" firstAttribute="leading" secondItem="oEW-Ep-cf0" secondAttribute="leading" constant="16" id="tGk-Mo-Xth"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="oEW-Ep-cf0"/>
