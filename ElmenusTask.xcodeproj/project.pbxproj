@@ -35,6 +35,7 @@
 		02E00A1922EAEE8100357240 /* ItemsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1822EAEE8100357240 /* ItemsEndPoint.swift */; };
 		02E00A1B22EAEF8300357240 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1A22EAEF8300357240 /* ItemsService.swift */; };
 		02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1D22EAF04900357240 /* ItemsProtocol.swift */; };
+		02E00A2222EAF75D00357240 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2122EAF75D00357240 /* TagEntity.swift */; };
 		5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		02E00A1822EAEE8100357240 /* ItemsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsEndPoint.swift; sourceTree = "<group>"; };
 		02E00A1A22EAEF8300357240 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		02E00A1D22EAF04900357240 /* ItemsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsProtocol.swift; sourceTree = "<group>"; };
+		02E00A2122EAF75D00357240 /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,9 +271,10 @@
 		0208E45022E7C42D007B71E9 /* DataLater */ = {
 			isa = PBXGroup;
 			children = (
-				0208E45822E7C7C1007B71E9 /* Service */,
+				02E00A1F22EAF6E400357240 /* DatabaseService */,
 				0208E45722E7C7B8007B71E9 /* EndPoint */,
 				0208E45622E7C7AB007B71E9 /* Entity */,
+				0208E45822E7C7C1007B71E9 /* RemoteService */,
 			);
 			path = DataLater;
 			sourceTree = "<group>";
@@ -302,14 +305,14 @@
 			path = EndPoint;
 			sourceTree = "<group>";
 		};
-		0208E45822E7C7C1007B71E9 /* Service */ = {
+		0208E45822E7C7C1007B71E9 /* RemoteService */ = {
 			isa = PBXGroup;
 			children = (
 				0209949922E8B05C00A17825 /* APIService.swift */,
 				0209949B22E8B10B00A17825 /* TagsService.swift */,
 				02E00A1A22EAEF8300357240 /* ItemsService.swift */,
 			);
-			path = Service;
+			path = RemoteService;
 			sourceTree = "<group>";
 		};
 		0208E45B22E7C8C8007B71E9 /* Tags */ = {
@@ -362,6 +365,22 @@
 				02E00A1D22EAF04900357240 /* ItemsProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		02E00A1F22EAF6E400357240 /* DatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A2022EAF70D00357240 /* DBEntity */,
+			);
+			path = DatabaseService;
+			sourceTree = "<group>";
+		};
+		02E00A2022EAF70D00357240 /* DBEntity */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A2122EAF75D00357240 /* TagEntity.swift */,
+			);
+			path = DBEntity;
 			sourceTree = "<group>";
 		};
 		05E522E662F8506207F1533A /* Frameworks */ = {
@@ -501,6 +520,7 @@
 				02E00A1B22EAEF8300357240 /* ItemsService.swift in Sources */,
 				02E00A1722EAED1D00357240 /* Item.swift in Sources */,
 				0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */,
+				02E00A2222EAF75D00357240 /* TagEntity.swift in Sources */,
 				0209949A22E8B05C00A17825 /* APIService.swift in Sources */,
 				0208E44322E7A473007B71E9 /* TagsPresenter.swift in Sources */,
 				0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */,

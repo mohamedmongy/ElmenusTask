@@ -61,6 +61,7 @@ class TagsPresenter: TagsPresenterProtocol {
     }
     
     
+    
     //MARK:- Private functions
     private func fetchTagsFirstPage() {
         viewController?.startAnimating()
