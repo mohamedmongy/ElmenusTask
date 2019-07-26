@@ -54,15 +54,18 @@ class TagsPresenter: TagsPresenterProtocol {
     }
     
     func fetchTagsNextPage() {
-        let nextPage = String(viewModel.page.value + 1)
+        
+        let nextPage = String(viewModel.page.value)
         viewModel.isLoading.accept(true)
         viewController?.startAnimating()
         interactor?.getTags(pageNumber: nextPage)
             .filter({ $0.count > 0 })
             .subscribe(onNext: { [weak self] newTags in
+                self?.viewController?.stopAnimating()
                 guard let oldTags = self?.viewModel.tags.value else { return }
                 self?.viewModel.tags.accept(oldTags + newTags)
                 self?.viewModel.isLoading.accept(false)
+                
             }, onError: { error in
                  print("tags >>>>>>>>>> \(error)")
                  self.viewModel.isLoading.accept(false)
@@ -81,12 +84,12 @@ class TagsPresenter: TagsPresenterProtocol {
             .subscribe(onNext: { [weak self] tags in
                 self?.saveTagsToRealmDB(tags: tags)
                 self?.viewController?.stopAnimating()
-                self?.viewModel.isLoading.accept(false)
                 self?.viewModel.tags.accept(tags)
+//                self?.viewModel.isLoading.accept(false)
                 }, onError: { error in
                     print("tags >>>>>>>>>> \(error)")
                     self.viewController?.stopAnimating()
-                    self.viewModel.isLoading.accept(false)
+//                    self.viewModel.isLoading.accept(false)
             }).disposed(by: disposeBag)
     }
     

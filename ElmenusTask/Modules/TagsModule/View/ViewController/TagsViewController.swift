@@ -63,10 +63,12 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     private func handleTagsCollectionVieweReachLastElement() {
         guard let presenter = presenter  else { return }
         tagsCollectionView.rx.reachedRight
+            .skip(2)
             .subscribe(onNext: {  _ in
-                let isLoading = presenter.viewModel.isLoading.value
-                
+                presenter.viewModel.isLoading.accept(false)
+                guard let isLoading = presenter.viewModel.isLoading.value else { return }
                 if !isLoading {
+                    presenter.viewModel.page.accept(presenter.viewModel.page.value + 1)
                     presenter.fetchTagsNextPage()
                 }
             }).disposed(by: disposeBag)
@@ -80,6 +82,8 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         tagsCollectionView.rx.itemSelected
             .subscribe(onNext: {  indexPath in
                 // TODO: - Populate items collection view With corresponding tag item
+                let tag = presenter.viewModel.tags.value[indexPath.row]
+                presenter.getItemsPerTag(name: tag.name)
             }).disposed(by: disposeBag)
     }
     

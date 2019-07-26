@@ -44,6 +44,11 @@ extension RealmProtocol {
     
     
     func fetchTags() -> [Tag] {
+        // fetch entity
+//        var specimens = try! Realm().objects(Specimen.self)
+//            .sorted(byKeyPath: "name", ascending: true)
+        
+        
         return []
     }
     

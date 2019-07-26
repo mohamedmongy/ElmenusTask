@@ -19,6 +19,6 @@ struct TagsViewModel {
     
     // fetch next Page
     let page = BehaviorRelay<Int>(value: 0)
-    let isLoading = BehaviorRelay<Bool>(value: false)
+    let isLoading = BehaviorRelay<Bool?>(value: nil)
     
 }
