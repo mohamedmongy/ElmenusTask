@@ -68,12 +68,25 @@ class TagsPresenter: TagsPresenterProtocol {
         guard let interactor = interactor else { return }
         interactor.getTags(pageNumber: "0")
             .subscribe(onNext: { [weak self] tags in
+                saveTagsToRealmDB(tags: tags)
                 self?.viewController?.stopAnimating()
                 self?.viewModel.tags.accept(tags)
                 }, onError: { error in
                     print("tags >>>>>>>>>> \(error)")
                     self.viewController?.stopAnimating()
             }).disposed(by: disposeBag)
+    }
+    
+    
+    private func saveTagsToRealmDB(tags: [Tag]) {
+        guard let interactor = interactor else { return }
+            interactor.saveTagsToDB(tags: tags)
+                .subscribe(onNext: { _  in
+                    print("tags saved successfully WoooooW")
+                }, onError: { error in
+                    print("error saving  tags Booooooom")
+                }).disposed(by: disposeBag)
+        
     }
     
 

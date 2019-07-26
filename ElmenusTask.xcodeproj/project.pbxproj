@@ -36,6 +36,7 @@
 		02E00A1B22EAEF8300357240 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1A22EAEF8300357240 /* ItemsService.swift */; };
 		02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1D22EAF04900357240 /* ItemsProtocol.swift */; };
 		02E00A2222EAF75D00357240 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2122EAF75D00357240 /* TagEntity.swift */; };
+		02E00A2422EAFA8400357240 /* RealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2322EAFA8400357240 /* RealmProtocol.swift */; };
 		5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		02E00A1A22EAEF8300357240 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		02E00A1D22EAF04900357240 /* ItemsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsProtocol.swift; sourceTree = "<group>"; };
 		02E00A2122EAF75D00357240 /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
+		02E00A2322EAFA8400357240 /* RealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProtocol.swift; sourceTree = "<group>"; };
 		4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				0208E45422E7C565007B71E9 /* TagsProtocol.swift */,
 				02E00A1D22EAF04900357240 /* ItemsProtocol.swift */,
+				02E00A2322EAFA8400357240 /* RealmProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E00A2422EAFA8400357240 /* RealmProtocol.swift in Sources */,
 				02E00A1B22EAEF8300357240 /* ItemsService.swift in Sources */,
 				02E00A1722EAED1D00357240 /* Item.swift in Sources */,
 				0208E45A22E7C7ED007B71E9 /* Tag.swift in Sources */,

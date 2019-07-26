@@ -31,7 +31,7 @@ protocol TagsPresenterProtocol: class {
 
 
 //MARK: - Interactor
-protocol TagsInteractorProtocol: TagsProtocol, ItemsProtocol {
+protocol TagsInteractorProtocol: TagsProtocol, ItemsProtocol, RealmProtocol {
 
     
 }
