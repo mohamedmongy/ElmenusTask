@@ -60,8 +60,6 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
             .disposed(by: disposeBag)
     }
     
-    
-    
     private func BindToViewModelItems() {
         guard let presenter = presenter else { return }
         presenter.viewModel.items
