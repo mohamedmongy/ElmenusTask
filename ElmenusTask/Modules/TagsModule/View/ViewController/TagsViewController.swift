@@ -14,10 +14,13 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
 
     
     
+    
     //MARK: - Outlets
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var itemsCollectionView: UICollectionView!
+    
+    
     
     
     //MARK: - Attributes
@@ -31,11 +34,12 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         super.viewDidLoad()
         registerCollectionViewCell()
         setCollectionViewFlowLayout()
+        handleTagsCollectionViewItemSelection()
+        handleItemsCollectionViewItemSelection()
+        handleTagsCollectionVieweReachLastElement()
         BindToViewModelTags()
         presenter?.attach()
     }
-    
-    
     
     
     
@@ -55,13 +59,32 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     
     
     
-    //MARK: - Loading Indicator
-    func startAnimating() {
-        loadingIndicator.startAnimating()
+    //MARK: - Collection View Reach Last Elemnt
+    private func handleTagsCollectionVieweReachLastElement() {
+        guard let presenter = presenter  else { return }
+        tagsCollectionView.rx.reachedRight
+            .subscribe(onNext: {  _ in
+                // TODO: - Populate items collection view With corresponding tag item
+            }).disposed(by: disposeBag)
     }
-
-    func stopAnimating() {
-        loadingIndicator.stopAnimating()
+    
+    
+    
+    //MARK: - Collection View item Selection
+    private func handleTagsCollectionViewItemSelection() {
+        guard let presenter = presenter  else { return }
+        tagsCollectionView.rx.itemSelected
+            .subscribe(onNext: {  indexPath in
+                // TODO: - Populate items collection view With corresponding tag item
+            }).disposed(by: disposeBag)
+    }
+    
+    private func handleItemsCollectionViewItemSelection() {
+        guard let presenter = presenter  else { return }
+        itemsCollectionView.rx.itemSelected
+            .subscribe(onNext: {  indexPath in
+                // TODO: - navigate to DetailsVC
+            }).disposed(by: disposeBag)
     }
     
     
@@ -119,6 +142,15 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     }
     
     
+    
+    //MARK: - Loading Indicator
+    func startAnimating() {
+        loadingIndicator.startAnimating()
+    }
+    
+    func stopAnimating() {
+        loadingIndicator.stopAnimating()
+    }
     
     
 }

@@ -37,6 +37,7 @@
 		02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A1D22EAF04900357240 /* ItemsProtocol.swift */; };
 		02E00A2222EAF75D00357240 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2122EAF75D00357240 /* TagEntity.swift */; };
 		02E00A2422EAFA8400357240 /* RealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2322EAFA8400357240 /* RealmProtocol.swift */; };
+		02E00A2722EB17A600357240 /* CollectionView+ReachRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2622EB17A600357240 /* CollectionView+ReachRight.swift */; };
 		5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		02E00A1D22EAF04900357240 /* ItemsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsProtocol.swift; sourceTree = "<group>"; };
 		02E00A2122EAF75D00357240 /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		02E00A2322EAFA8400357240 /* RealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProtocol.swift; sourceTree = "<group>"; };
+		02E00A2622EB17A600357240 /* CollectionView+ReachRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+ReachRight.swift"; sourceTree = "<group>"; };
 		4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		020905DB22E9A70600585518 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				02E00A2522EB176C00357240 /* CollectionView */,
 				020905DF22E9A84700585518 /* Error */,
 				020905DC22E9A71300585518 /* Reachability */,
 			);
@@ -384,6 +387,14 @@
 				02E00A2122EAF75D00357240 /* TagEntity.swift */,
 			);
 			path = DBEntity;
+			sourceTree = "<group>";
+		};
+		02E00A2522EB176C00357240 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A2622EB17A600357240 /* CollectionView+ReachRight.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		05E522E662F8506207F1533A /* Frameworks */ = {
@@ -531,6 +542,7 @@
 				02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */,
 				020905DE22E9A73E00585518 /* Reachability+Shared.swift in Sources */,
 				0208E41922E79AF6007B71E9 /* ViewController.swift in Sources */,
+				02E00A2722EB17A600357240 /* CollectionView+ReachRight.swift in Sources */,
 				0208E44122E7A473007B71E9 /* TagsViewModel.swift in Sources */,
 				0208E44222E7A473007B71E9 /* TagsContract.swift in Sources */,
 				0208E44722E7A473007B71E9 /* TagsLocalizatedStrings.swift in Sources */,

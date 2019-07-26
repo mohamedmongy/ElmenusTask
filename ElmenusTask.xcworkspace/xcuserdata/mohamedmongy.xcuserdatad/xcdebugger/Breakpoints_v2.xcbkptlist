@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElmenusTask/ElmenusEngine/DomainLayer/Protocol/ItemsProtocol.swift"
-            timestampString = "585827305.29263"
+            timestampString = "585832566.463261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-            timestampString = "585827305.292748"
+            timestampString = "585832566.463356"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-            timestampString = "585827305.2927999"
+            timestampString = "585832566.463449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -106,7 +106,7 @@
                   moduleName = "ElmenusTask"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-                  timestampString = "585827305.752457"
+                  timestampString = "585832566.842629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -121,7 +121,7 @@
                   moduleName = "ElmenusTask"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-                  timestampString = "585827305.754526"
+                  timestampString = "585832566.845776"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElmenusTask/Modules/TagsModule/Presenter/TagsPresenter.swift"
-            timestampString = "585827305.292846"
+            timestampString = "585832566.463531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -154,13 +154,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElmenusTask/Modules/TagsModule/Presenter/TagsPresenter.swift"
-            timestampString = "585827305.292889"
+            timestampString = "585832566.463577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "saveTagsToRealmDB(tags:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmenusTask/Modules/TagsModule/View/ViewController/TagsViewController.swift"
+            timestampString = "585832566.463624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "handleTagsCollectionVieweReachLastElement()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmenusTask.TagsViewController.(handleTagsCollectionVieweReachLastElement in _1D3B1B7DB320EC6DAE72169399C7AA80)() -&gt; ()"
+                  moduleName = "ElmenusTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/Modules/TagsModule/View/ViewController/TagsViewController.swift"
+                  timestampString = "585832566.8662781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "945">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (()) -&gt; () in ElmenusTask.TagsViewController.(handleTagsCollectionVieweReachLastElement in _1D3B1B7DB320EC6DAE72169399C7AA80)() -&gt; ()"
+                  moduleName = "ElmenusTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/Modules/TagsModule/View/ViewController/TagsViewController.swift"
+                  timestampString = "585832566.870185"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
