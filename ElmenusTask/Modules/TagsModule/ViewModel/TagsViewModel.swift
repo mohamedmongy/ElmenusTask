@@ -12,6 +12,13 @@ import RxCocoa
 
 struct TagsViewModel {
     
+    
+    // DataSource
     let tags = BehaviorRelay<[Tag]>(value: [])
     let items = BehaviorRelay<[Item]>(value: [])
+    
+    // fetch next Page
+    let page = BehaviorRelay<Int>(value: 0)
+    let isLoading = BehaviorRelay<Bool>(value: false)
+    
 }

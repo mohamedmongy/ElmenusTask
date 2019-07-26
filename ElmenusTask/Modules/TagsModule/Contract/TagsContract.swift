@@ -25,7 +25,7 @@ protocol TagsPresenterProtocol: class {
     func attach()
     var viewModel: TagsViewModel  { get }
     func getItemsPerTag(name: String)
-
+    func fetchTagsNextPage()
 }
 
 

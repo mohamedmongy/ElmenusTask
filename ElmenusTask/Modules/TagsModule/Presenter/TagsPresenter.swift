@@ -53,13 +53,20 @@ class TagsPresenter: TagsPresenterProtocol {
             }).disposed(by: disposeBag)
     }
     
-    func fetchTagsNextPage(pageNumber: String) {
-        interactor?.getTags(pageNumber: pageNumber)
-            .subscribe(onNext: { [weak self] newtags in
+    func fetchTagsNextPage() {
+        let nextPage = String(viewModel.page.value + 1)
+        viewModel.isLoading.accept(true)
+        viewController?.startAnimating()
+        interactor?.getTags(pageNumber: nextPage)
+            .filter({ $0.count > 0 })
+            .subscribe(onNext: { [weak self] newTags in
                 guard let oldTags = self?.viewModel.tags.value else { return }
-                self?.viewModel.tags.accept(oldTags + newtags)
+                self?.viewModel.tags.accept(oldTags + newTags)
+                self?.viewModel.isLoading.accept(false)
             }, onError: { error in
                  print("tags >>>>>>>>>> \(error)")
+                 self.viewModel.isLoading.accept(false)
+                 self.viewController?.stopAnimating()
             }).disposed(by: disposeBag)
     }
     
@@ -68,15 +75,18 @@ class TagsPresenter: TagsPresenterProtocol {
     //MARK:- Private functions
     private func fetchTagsFirstPage() {
         viewController?.startAnimating()
+        viewModel.isLoading.accept(true)
         guard let interactor = interactor else { return }
         interactor.getTags(pageNumber: "0")
             .subscribe(onNext: { [weak self] tags in
                 self?.saveTagsToRealmDB(tags: tags)
                 self?.viewController?.stopAnimating()
+                self?.viewModel.isLoading.accept(false)
                 self?.viewModel.tags.accept(tags)
                 }, onError: { error in
                     print("tags >>>>>>>>>> \(error)")
                     self.viewController?.stopAnimating()
+                    self.viewModel.isLoading.accept(false)
             }).disposed(by: disposeBag)
     }
     

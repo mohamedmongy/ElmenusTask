@@ -64,7 +64,11 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         guard let presenter = presenter  else { return }
         tagsCollectionView.rx.reachedRight
             .subscribe(onNext: {  _ in
-                // TODO: - Populate items collection view With corresponding tag item
+                let isLoading = presenter.viewModel.isLoading.value
+                
+                if !isLoading {
+                    presenter.fetchTagsNextPage()
+                }
             }).disposed(by: disposeBag)
     }
     
