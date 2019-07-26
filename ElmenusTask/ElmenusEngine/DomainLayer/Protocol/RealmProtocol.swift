@@ -20,7 +20,7 @@ protocol RealmProtocol {
 extension RealmProtocol {
     
     
-   private func saveTagsToDB(tags: [Tag]) -> Observable<Void> {
+    func saveTagsToDB(tags: [Tag]) -> Observable<Void> {
     
     
         do {

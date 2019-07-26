@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import RealmSwift
+
 
 
 class TagsPresenter: TagsPresenterProtocol {
@@ -34,6 +36,7 @@ class TagsPresenter: TagsPresenterProtocol {
     
     //MARK:- Attach
     func attach() {
+         print(Realm.Configuration.defaultConfiguration.fileURL!)
          fetchTagsFirstPage()
     }
     
@@ -68,7 +71,7 @@ class TagsPresenter: TagsPresenterProtocol {
         guard let interactor = interactor else { return }
         interactor.getTags(pageNumber: "0")
             .subscribe(onNext: { [weak self] tags in
-                saveTagsToRealmDB(tags: tags)
+                self?.saveTagsToRealmDB(tags: tags)
                 self?.viewController?.stopAnimating()
                 self?.viewModel.tags.accept(tags)
                 }, onError: { error in
