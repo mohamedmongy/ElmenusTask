@@ -39,7 +39,5 @@ protocol ItemDetailInteractorProtocol: class {
 
 //MARK: - View
 protocol ItemDetailViewControllerProtocol: class {
-
   var presenter: ItemDetailPresenterProtocol?  { get set }
-  func loadIntent() -> Observable<Void>
 }

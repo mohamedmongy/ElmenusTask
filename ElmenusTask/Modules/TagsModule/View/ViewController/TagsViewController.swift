@@ -32,6 +32,8 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     //MARK: -  View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarTitleColor()
+        setNavighationBarUI()
         registerCollectionViewCell()
         setCollectionViewFlowLayout()
         handleTagsCollectionViewItemSelection()
@@ -203,6 +205,21 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         
         self.present(alertController, animated: true) {
         }
+    }
+    
+    
+    //MARK: - Navigation Bar
+    private func setNavigationBarTitleColor() {
+        self.navigationController?.navigationBar.barTintColor = .darkGray
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
+    private func setNavighationBarUI() {
+        self.navigationItem.title = "Home"
+        navigationController?.navigationBar.tintColor = .red
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.hidesBackButton = false
     }
     
     

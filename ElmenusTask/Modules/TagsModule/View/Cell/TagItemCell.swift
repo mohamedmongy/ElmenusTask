@@ -27,9 +27,9 @@ class TagItemCell: UICollectionViewCell {
 }
 
 extension TagItemCell {
-    
     func configure(tag: Tag) {
         tagItemNameLbl.text = tag.name
+        clipImageCorners()
         guard let url = URL(string: tag.photoUrl) else { return }
         tagItemImgView.kf.indicatorType = .activity
         tagItemImgView.kf.setImage(with: url)
@@ -38,12 +38,18 @@ extension TagItemCell {
 
 
 extension TagItemCell {
-    
     func configure(item: Item) {
         tagItemNameLbl.text = item.name
+        clipImageCorners()
         guard let url = URL(string: item.photoUrl) else { return }
         tagItemImgView.kf.indicatorType = .activity
         tagItemImgView.kf.setImage(with: url)
     }
-    
+}
+
+extension TagItemCell {
+    private func clipImageCorners() {
+        tagItemImgView.layer.cornerRadius = self.tagItemImgView.frame.size.width / 2
+        tagItemImgView.clipsToBounds = true
+    }
 }

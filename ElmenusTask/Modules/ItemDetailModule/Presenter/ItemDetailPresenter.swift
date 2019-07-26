@@ -33,12 +33,6 @@ class ItemDetailPresenter: ItemDetailPresenterProtocol {
     
     //MARK:- Functions
     func attach() {
-        
-        let intentLoad = viewController?.loadIntent().subscribe(onNext:  { () in
-           
-        }, onError:  nil, onCompleted: nil, onDisposed: nil)
-            .disposed(by: disposeBag)
-       
     }
     
     //MARK:- Private functions
