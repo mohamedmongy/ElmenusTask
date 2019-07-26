@@ -6,16 +6,17 @@
 //
 //
 
-import Foundation
+import RxCocoa
 import RxSwift
 
 
 //MARK: - Router
 enum TagsRoute {
+    case itemDetail(item: BehaviorRelay<Item>)
 }
 
 protocol TagsRouterProtocol: class {
-    func go(to route:TagsRoute)
+    func go(to route: TagsRoute)
 }
 
 
@@ -26,6 +27,7 @@ protocol TagsPresenterProtocol: class {
     var viewModel: TagsViewModel  { get }
     func getItemsPerTag(name: String)
     func fetchTagsNextPage()
+    func navigateToItemDetailVC(item: BehaviorRelay<Item> )
 }
 
 

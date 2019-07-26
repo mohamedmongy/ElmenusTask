@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RealmSwift
+import RxCocoa
 
 
 
@@ -105,6 +106,13 @@ class TagsPresenter: TagsPresenterProtocol {
                 }, onError: { error in
                     print("error saving  tags Booooooom")
                 }).disposed(by: disposeBag)
+    }
+    
+    
+    
+    //MARK:- Navigation functions
+    func navigateToItemDetailVC(item: BehaviorRelay<Item> ) {
+        router.go(to: .itemDetail(item: item))
     }
     
 

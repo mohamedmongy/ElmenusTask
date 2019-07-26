@@ -32,9 +32,14 @@ class TagsRouter: TagsRouterProtocol {
     
     
     //MARK: - Routing
-    func go(to route:TagsRoute) {
+    func go(to route: TagsRoute) {
         switch route {
-        default: break
+          case  let .itemDetail(item):
+            let detailVC = ItemDetailRouter.assembleModule(item: item)
+            guard let nav = viewController?.navigationController else { return }
+            nav.pushViewController(detailVC, animated: true)
+            break
+         
         }
     }
 

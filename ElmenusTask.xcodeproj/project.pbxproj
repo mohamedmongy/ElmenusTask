@@ -38,6 +38,14 @@
 		02E00A2222EAF75D00357240 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2122EAF75D00357240 /* TagEntity.swift */; };
 		02E00A2422EAFA8400357240 /* RealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2322EAFA8400357240 /* RealmProtocol.swift */; };
 		02E00A2722EB17A600357240 /* CollectionView+ReachRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A2622EB17A600357240 /* CollectionView+ReachRight.swift */; };
+		02E00A3F22EBBC2200357240 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3122EBBC2200357240 /* ItemDetailViewModel.swift */; };
+		02E00A4022EBBC2200357240 /* ItemDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3322EBBC2200357240 /* ItemDetailContract.swift */; };
+		02E00A4122EBBC2200357240 /* ItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3522EBBC2200357240 /* ItemDetailPresenter.swift */; };
+		02E00A4222EBBC2200357240 /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E00A3722EBBC2200357240 /* ItemDetailViewController.xib */; };
+		02E00A4322EBBC2200357240 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3822EBBC2200357240 /* ItemDetailViewController.swift */; };
+		02E00A4422EBBC2200357240 /* ItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3A22EBBC2200357240 /* ItemDetailInteractor.swift */; };
+		02E00A4522EBBC2200357240 /* ItemDetailLocalizatedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3C22EBBC2200357240 /* ItemDetailLocalizatedStrings.swift */; };
+		02E00A4622EBBC2200357240 /* ItemDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00A3E22EBBC2200357240 /* ItemDetailRouter.swift */; };
 		5F3E765A7F87F38AC46CB3BE /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +83,14 @@
 		02E00A2122EAF75D00357240 /* TagEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		02E00A2322EAFA8400357240 /* RealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProtocol.swift; sourceTree = "<group>"; };
 		02E00A2622EB17A600357240 /* CollectionView+ReachRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+ReachRight.swift"; sourceTree = "<group>"; };
+		02E00A3122EBBC2200357240 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
+		02E00A3322EBBC2200357240 /* ItemDetailContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailContract.swift; sourceTree = "<group>"; };
+		02E00A3522EBBC2200357240 /* ItemDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailPresenter.swift; sourceTree = "<group>"; };
+		02E00A3722EBBC2200357240 /* ItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
+		02E00A3822EBBC2200357240 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		02E00A3A22EBBC2200357240 /* ItemDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailInteractor.swift; sourceTree = "<group>"; };
+		02E00A3C22EBBC2200357240 /* ItemDetailLocalizatedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailLocalizatedStrings.swift; sourceTree = "<group>"; };
+		02E00A3E22EBBC2200357240 /* ItemDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailRouter.swift; sourceTree = "<group>"; };
 		4E1EC2978DEF95443C049F6B /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718D1A0082CA19F9F85E7875 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
 		DD9FC6A7F9C714BC9F7BF396 /* Pods-ElmenusTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.release.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +169,7 @@
 		0208E42C22E79F64007B71E9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				02E00A2F22EBBC2200357240 /* ItemDetailModule */,
 				0208E43122E7A473007B71E9 /* TagsModule */,
 				0208E42E22E79FAE007B71E9 /* AppDelegate */,
 			);
@@ -397,6 +414,77 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		02E00A2F22EBBC2200357240 /* ItemDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3022EBBC2200357240 /* ViewModel */,
+				02E00A3222EBBC2200357240 /* Contract */,
+				02E00A3422EBBC2200357240 /* Presenter */,
+				02E00A3622EBBC2200357240 /* ViewController */,
+				02E00A3922EBBC2200357240 /* Interactor */,
+				02E00A3B22EBBC2200357240 /* Localization */,
+				02E00A3D22EBBC2200357240 /* Router */,
+			);
+			path = ItemDetailModule;
+			sourceTree = "<group>";
+		};
+		02E00A3022EBBC2200357240 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3122EBBC2200357240 /* ItemDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		02E00A3222EBBC2200357240 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3322EBBC2200357240 /* ItemDetailContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		02E00A3422EBBC2200357240 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3522EBBC2200357240 /* ItemDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		02E00A3622EBBC2200357240 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3722EBBC2200357240 /* ItemDetailViewController.xib */,
+				02E00A3822EBBC2200357240 /* ItemDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		02E00A3922EBBC2200357240 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3A22EBBC2200357240 /* ItemDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		02E00A3B22EBBC2200357240 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3C22EBBC2200357240 /* ItemDetailLocalizatedStrings.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		02E00A3D22EBBC2200357240 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				02E00A3E22EBBC2200357240 /* ItemDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		05E522E662F8506207F1533A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +564,7 @@
 			files = (
 				0208E42122E79AF7007B71E9 /* LaunchScreen.storyboard in Resources */,
 				0208E44522E7A473007B71E9 /* TagsViewController.xib in Resources */,
+				02E00A4222EBBC2200357240 /* ItemDetailViewController.xib in Resources */,
 				0208E41E22E79AF7007B71E9 /* Assets.xcassets in Resources */,
 				0208E44E22E7B3DD007B71E9 /* TagItemCell.xib in Resources */,
 				0208E41C22E79AF6007B71E9 /* Main.storyboard in Resources */,
@@ -538,8 +627,10 @@
 				02E00A2222EAF75D00357240 /* TagEntity.swift in Sources */,
 				0209949A22E8B05C00A17825 /* APIService.swift in Sources */,
 				0208E44322E7A473007B71E9 /* TagsPresenter.swift in Sources */,
+				02E00A4622EBBC2200357240 /* ItemDetailRouter.swift in Sources */,
 				0208E45D22E7C8E5007B71E9 /* TagRespone.swift in Sources */,
 				02E00A1E22EAF04900357240 /* ItemsProtocol.swift in Sources */,
+				02E00A4522EBBC2200357240 /* ItemDetailLocalizatedStrings.swift in Sources */,
 				020905DE22E9A73E00585518 /* Reachability+Shared.swift in Sources */,
 				0208E41922E79AF6007B71E9 /* ViewController.swift in Sources */,
 				02E00A2722EB17A600357240 /* CollectionView+ReachRight.swift in Sources */,
@@ -551,8 +642,13 @@
 				0208E41722E79AF6007B71E9 /* AppDelegate.swift in Sources */,
 				0208E45522E7C565007B71E9 /* TagsProtocol.swift in Sources */,
 				0208E44822E7A473007B71E9 /* TagsRouter.swift in Sources */,
+				02E00A4322EBBC2200357240 /* ItemDetailViewController.swift in Sources */,
+				02E00A4122EBBC2200357240 /* ItemDetailPresenter.swift in Sources */,
+				02E00A4422EBBC2200357240 /* ItemDetailInteractor.swift in Sources */,
 				0209949C22E8B10B00A17825 /* TagsService.swift in Sources */,
 				0208E44D22E7B3DD007B71E9 /* TagItemCell.swift in Sources */,
+				02E00A3F22EBBC2200357240 /* ItemDetailViewModel.swift in Sources */,
+				02E00A4022EBBC2200357240 /* ItemDetailContract.swift in Sources */,
 				02E00A1522EAECF600357240 /* ItemResponse.swift in Sources */,
 				0208E44422E7A473007B71E9 /* TagsViewController.swift in Sources */,
 				02E00A1922EAEE8100357240 /* ItemsEndPoint.swift in Sources */,

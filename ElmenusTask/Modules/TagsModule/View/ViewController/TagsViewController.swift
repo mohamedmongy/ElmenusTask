@@ -106,7 +106,9 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         guard let presenter = presenter  else { return }
         itemsCollectionView.rx.itemSelected
             .subscribe(onNext: {  indexPath in
-                // TODO: - navigate to DetailsVC
+                let item = presenter.viewModel.items.value[indexPath.row]
+                let itemBehavior = BehaviorRelay<Item>(value: item)
+                presenter.navigateToItemDetailVC(item: itemBehavior)
             }).disposed(by: disposeBag)
     }
     
@@ -185,7 +187,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     
     
     
-    //MARK: - Error Message
+    //MARK: - Error View
     func showDefaultAlert(title:String?,message:String?, actionBlock:(()->Void)? = nil) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
