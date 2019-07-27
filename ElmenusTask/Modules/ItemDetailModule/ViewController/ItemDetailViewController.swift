@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Kingfisher
+import Moya
 
 
 class ItemDetailViewController: UIViewController, ItemDetailViewControllerProtocol {
@@ -37,6 +38,7 @@ class ItemDetailViewController: UIViewController, ItemDetailViewControllerProtoc
         BindToViewModelItem()
         presenter?.attach()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

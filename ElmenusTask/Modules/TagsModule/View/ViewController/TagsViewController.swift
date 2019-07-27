@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Moya
+
 
 class TagsViewController: UIViewController, TagsViewControllerProtocol {
 
@@ -32,6 +34,23 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     //MARK: -  View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//
+//        let rxProvider = MoyaProvider<TagsEndPoint>()
+//        rxProvider.rx.request(.tags(pageNumber: "0"), callbackQueue: DispatchQueue.main)
+//            .subscribe { event in
+//
+//                switch event {
+//                case let .success(response):
+//                    debugPrint(response)
+//                    break
+//                case let .error(error):
+//                    print(error)
+//                    break
+//                }
+//
+//            }.disposed(by: disposeBag)
+        
         setNavigationBarTitleColor()
         setNavighationBarUI()
         registerCollectionViewCell()
