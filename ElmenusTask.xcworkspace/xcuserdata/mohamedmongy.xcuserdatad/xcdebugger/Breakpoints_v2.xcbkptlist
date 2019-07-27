@@ -90,7 +90,7 @@
                   moduleName = "ElmenusTask"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-                  timestampString = "585923486.4140919"
+                  timestampString = "585924461.7077399"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -105,7 +105,7 @@
                   moduleName = "ElmenusTask"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-                  timestampString = "585923486.416953"
+                  timestampString = "585924461.710282"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -121,8 +121,24 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "ElmenusTask/Modules/TagsModule/View/ViewController/TagsViewController.swift"
+            timestampString = "585924461.642435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "bindToFirstTagViewModelToPopulateItemsCollectionVWhenTagsLoadedFirstTime()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "ElmenusTask/Modules/TagsModule/Presenter/TagsPresenter.swift"
-            timestampString = "585923486.3657711"
+            timestampString = "585924461.64316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -138,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElmenusTask/Modules/TagsModule/Presenter/TagsPresenter.swift"
-            timestampString = "585923486.366148"
+            timestampString = "585924461.643213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"

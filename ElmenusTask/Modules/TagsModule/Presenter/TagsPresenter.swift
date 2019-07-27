@@ -49,12 +49,14 @@ class TagsPresenter: TagsPresenterProtocol {
                 self?.fetchTagsFirstPage()
             } else {
                 self?.viewModel.tags.accept(tags)
+                self?.viewModel.firstTag.accept(tags.first)
             }
         }, onError: { error in
              print("fetch tags from db  >>>>>>>>>> \(error.localizedDescription)")
         }).disposed(by: disposeBag)
 
     }
+    
     
     
     //MARK:- Public functions
@@ -64,12 +66,11 @@ class TagsPresenter: TagsPresenterProtocol {
         interactor.getItems(tagName: name)
             .subscribe(onNext: {  [weak self] items in
                 self?.viewController?.stopAnimatingItemsIndicator()
-                self?.saveItemsToRealmDB(items: items)
                 self?.viewModel.items.accept(items)
+                self?.saveItemsToRealmDB(items: items)
             }, onError: { error in
                   print("tags >>>>>>>>>> \(error.localizedDescription)")
                   self.viewController?.stopAnimatingItemsIndicator()
-                  
             }).disposed(by: disposeBag)
     }
     
@@ -101,10 +102,12 @@ class TagsPresenter: TagsPresenterProtocol {
         viewModel.isLoading.accept(true)
         guard let interactor = interactor else { return }
         interactor.getTags(pageNumber: "0")
+            .filter({ $0.count != 0 })
             .subscribe(onNext: { [weak self] tags in
-                self?.saveTagsToRealmDB(tags: tags)
                 self?.viewController?.stopAnimating()
                 self?.viewModel.tags.accept(tags)
+                self?.viewModel.firstTag.accept(tags.first)
+                self?.saveTagsToRealmDB(tags: tags)
 //                self?.viewModel.isLoading.accept(false)
                 }, onError: { error in
                     print("tags >>>>>>>>>> \(error.localizedDescription)")

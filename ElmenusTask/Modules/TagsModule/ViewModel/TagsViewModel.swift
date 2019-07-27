@@ -16,6 +16,7 @@ struct TagsViewModel {
     // DataSource
     let tags = BehaviorRelay<[Tag]>(value: [])
     let items = BehaviorRelay<[Item]>(value: [])
+    let firstTag = BehaviorRelay<Tag?>(value: nil)
     
     
     // fetch next Page

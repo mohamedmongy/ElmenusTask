@@ -41,6 +41,7 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         handleTagsCollectionVieweReachLastElement()
         BindToViewModelTags()
         BindToViewModelItems()
+        bindToFirstTagViewModelToPopulateItemsCollectionVWhenTagsLoadedFirstTime()
         presenter?.attach()
     }
     
@@ -58,6 +59,15 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
                 return cell
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func bindToFirstTagViewModelToPopulateItemsCollectionVWhenTagsLoadedFirstTime() {
+        guard let presenter = presenter else { return }
+        presenter.viewModel.firstTag
+            .subscribe(onNext: { tag in
+                guard let tag = tag else { return }
+                presenter.getItemsPerTag(name: tag.name)
+        }).disposed(by: disposeBag)
     }
     
     private func BindToViewModelItems() {
