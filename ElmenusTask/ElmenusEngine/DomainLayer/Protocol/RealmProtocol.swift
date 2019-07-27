@@ -13,7 +13,8 @@ import RxSwift
 
 protocol RealmProtocol {
     func saveTagsToDB(tags: [Tag]) -> Observable<Void>
-    func fetchTags() -> [Tag]
+    func saveItemsToDB(items: [Item]) -> Observable<Void>
+    func fetchTagsFromDB() -> Observable<[Tag]>
 }
 
 
@@ -21,38 +22,18 @@ extension RealmProtocol {
     
     
     func saveTagsToDB(tags: [Tag]) -> Observable<Void> {
-    
-    
-        do {
-              let realm = try! Realm()
-              try realm.write {
-                let tags = tags
-                for tag in tags {
-                    let tagEntity = TagEntity()
-                    tagEntity.name = tag.name
-                    tagEntity.photoURL = tag.photoUrl
-                    realm.add(tagEntity)
-                }
-            }
-            return Observable.just(())
-            
-        } catch let  error {
-            return Observable.error(error)
-        }
-        
+        let serviceDB = RealmDBService()
+        return serviceDB.saveTagsToDB(tags: tags)
     }
     
-    
-    func fetchTags() -> [Tag] {
-        // fetch entity
-//        var specimens = try! Realm().objects(Specimen.self)
-//            .sorted(byKeyPath: "name", ascending: true)
-        
-        
-        return []
+    func saveItemsToDB(items: [Item]) -> Observable<Void> {
+          let serviceDB = RealmDBService()
+          return serviceDB.saveItemsToDB(items: items)
     }
     
-    
-    
+    func fetchTagsFromDB() -> Observable<[Tag]>  {
+        let serviceDB = RealmDBService()
+        return serviceDB.fetchTagsFromDB()
+    }
 
 }

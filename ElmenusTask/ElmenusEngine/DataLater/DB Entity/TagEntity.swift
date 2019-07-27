@@ -7,11 +7,11 @@
 //
 
 
-import Foundation
 import RealmSwift
 
 
 class TagEntity: Object {
     @objc dynamic var name = ""
     @objc dynamic var photoURL = ""
+    let items =  List<ItemEntity>()
 }

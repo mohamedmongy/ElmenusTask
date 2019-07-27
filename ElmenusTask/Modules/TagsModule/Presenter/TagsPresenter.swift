@@ -37,10 +37,24 @@ class TagsPresenter: TagsPresenterProtocol {
     
     //MARK:- Attach
     func attach() {
-         print(Realm.Configuration.defaultConfiguration.fileURL!)
-         fetchTagsFirstPage()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        fetchTagsFromDBOrNewtworK()
     }
     
+    private func fetchTagsFromDBOrNewtworK() {
+        guard let interactor = interactor else { return }
+        interactor.fetchTagsFromDB()
+           .subscribe(onNext: { [weak self] tags in
+            if tags.count == 0 {
+                self?.fetchTagsFirstPage()
+            } else {
+                self?.viewModel.tags.accept(tags)
+            }
+        }, onError: { error in
+             print("fetch tags from db  >>>>>>>>>> \(error.localizedDescription)")
+        }).disposed(by: disposeBag)
+
+    }
     
     
     //MARK:- Public functions
@@ -50,9 +64,10 @@ class TagsPresenter: TagsPresenterProtocol {
         interactor.getItems(tagName: name)
             .subscribe(onNext: {  [weak self] items in
                 self?.viewController?.stopAnimatingItemsIndicator()
+                self?.saveItemsToRealmDB(items: items)
                 self?.viewModel.items.accept(items)
             }, onError: { error in
-                  print("tags >>>>>>>>>> \(error)")
+                  print("tags >>>>>>>>>> \(error.localizedDescription)")
                   self.viewController?.stopAnimatingItemsIndicator()
                   
             }).disposed(by: disposeBag)
@@ -66,12 +81,13 @@ class TagsPresenter: TagsPresenterProtocol {
             .filter({ $0.count > 0 })
             .subscribe(onNext: { [weak self] newTags in
                 self?.viewController?.stopAnimating()
+                self?.saveTagsToRealmDB(tags: newTags)
                 guard let oldTags = self?.viewModel.tags.value else { return }
                 self?.viewModel.tags.accept(oldTags + newTags)
                 self?.viewModel.isLoading.accept(false)
                 
             }, onError: { error in
-                 print("tags >>>>>>>>>> \(error)")
+                 print("tags >>>>>>>>>> \(error.localizedDescription)")
                  self.viewModel.isLoading.accept(false)
                  self.viewController?.stopAnimating()
             }).disposed(by: disposeBag)
@@ -91,12 +107,11 @@ class TagsPresenter: TagsPresenterProtocol {
                 self?.viewModel.tags.accept(tags)
 //                self?.viewModel.isLoading.accept(false)
                 }, onError: { error in
-                    print("tags >>>>>>>>>> \(error)")
+                    print("tags >>>>>>>>>> \(error.localizedDescription)")
                     self.viewController?.stopAnimating()
 //                    self.viewModel.isLoading.accept(false)
             }).disposed(by: disposeBag)
     }
-    
     
     private func saveTagsToRealmDB(tags: [Tag]) {
         guard let interactor = interactor else { return }
@@ -106,6 +121,16 @@ class TagsPresenter: TagsPresenterProtocol {
                 }, onError: { error in
                     print("error saving  tags Booooooom")
                 }).disposed(by: disposeBag)
+    }
+    
+    private func saveItemsToRealmDB(items: [Item]) {
+        guard let interactor = interactor else { return }
+        interactor.saveItemsToDB(items: items)
+            .subscribe(onNext: { _  in
+                print("Items saved successfully WoooooW")
+            }, onError: { error in
+                print("error saving  Items Booooooom")
+            }).disposed(by: disposeBag)
     }
     
     
