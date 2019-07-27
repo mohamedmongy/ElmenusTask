@@ -90,7 +90,7 @@
                   moduleName = "ElmenusTask"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-                  timestampString = "585924461.7077399"
+                  timestampString = "585925311.212428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -105,7 +105,7 @@
                   moduleName = "ElmenusTask"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mohamedmongy/Desktop/Books/resume/ElmenusTask/ElmenusTask/ElmenusEngine/DataLater/EndPoint/ItemsEndPoint.swift"
-                  timestampString = "585924461.710282"
+                  timestampString = "585925311.215185"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -113,54 +113,6 @@
                   offsetFromSymbolStart = "477">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ElmenusTask/Modules/TagsModule/View/ViewController/TagsViewController.swift"
-            timestampString = "585924461.642435"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "bindToFirstTagViewModelToPopulateItemsCollectionVWhenTagsLoadedFirstTime()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ElmenusTask/Modules/TagsModule/Presenter/TagsPresenter.swift"
-            timestampString = "585924461.64316"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "fetchTagsFromDBOrNewtworK()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ElmenusTask/Modules/TagsModule/Presenter/TagsPresenter.swift"
-            timestampString = "585924461.643213"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "fetchTagsFromDBOrNewtworK()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

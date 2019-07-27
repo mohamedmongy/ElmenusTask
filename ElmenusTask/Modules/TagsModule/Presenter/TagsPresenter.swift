@@ -41,20 +41,64 @@ class TagsPresenter: TagsPresenterProtocol {
         fetchTagsFromDBOrNewtworK()
     }
     
+    
+    
+    //MARK:- Private functions
     private func fetchTagsFromDBOrNewtworK() {
         guard let interactor = interactor else { return }
         interactor.fetchTagsFromDB()
            .subscribe(onNext: { [weak self] tags in
-            if tags.count == 0 {
-                self?.fetchTagsFirstPage()
-            } else {
+            self?.fetchFromDBOrAPI(tags: tags)
+        }, onError: { error in
+             self.viewController?.showDefaultAlert(title: "Fetch tags from db", message: error.localizedDescription, actionBlock: nil)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func fetchFromDBOrAPI(tags: [Tag]) {
+        if tags.count == 0 {
+            self.fetchTagsFirstPage()
+        } else {
+            self.viewModel.tags.accept(tags)
+            self.viewModel.firstTag.accept(tags.first)
+        }
+    }
+    
+    private func fetchTagsFirstPage() {
+        viewController?.startAnimating()
+        viewModel.isLoading.accept(true)
+        guard let interactor = interactor else { return }
+        interactor.getTags(pageNumber: "0")
+            .filter({ $0.count != 0 })
+            .subscribe(onNext: { [weak self] tags in
+                self?.viewController?.stopAnimating()
                 self?.viewModel.tags.accept(tags)
                 self?.viewModel.firstTag.accept(tags.first)
-            }
-        }, onError: { error in
-             print("fetch tags from db  >>>>>>>>>> \(error.localizedDescription)")
-        }).disposed(by: disposeBag)
+                self?.saveTagsToRealmDB(tags: tags)
+                }, onError: { error in
+                    self.viewController?.stopAnimating()
+                    self.viewController?.showDefaultAlert(title: "Fetch tags First Page from API", message: error.localizedDescription, actionBlock: nil)
+            }).disposed(by: disposeBag)
+    }
+    
+    private func saveTagsToRealmDB(tags: [Tag]) {
+        guard let interactor = interactor else { return }
+            interactor.saveTagsToDB(tags: tags)
+                .subscribe(onNext: { _  in
+                    self.viewController?.showDefaultAlert(title: "Congrats", message: "tags saved successfully to DB", actionBlock: nil)
+                }, onError: { error in
+                    self.viewController?.showDefaultAlert(title: "Error saving  tags to DB", message: error.localizedDescription, actionBlock: nil)
 
+                }).disposed(by: disposeBag)
+    }
+    
+    private func saveItemsToRealmDB(items: [Item]) {
+        guard let interactor = interactor else { return }
+        interactor.saveItemsToDB(items: items)
+            .subscribe(onNext: { _  in
+                self.viewController?.showDefaultAlert(title: "Congrats", message: "Items saved successfully WoooooW", actionBlock: nil)
+            }, onError: { error in
+                self.viewController?.showDefaultAlert(title: "Error saving  Items to DB", message: error.localizedDescription, actionBlock: nil)
+            }).disposed(by: disposeBag)
     }
     
     
@@ -68,9 +112,9 @@ class TagsPresenter: TagsPresenterProtocol {
                 self?.viewController?.stopAnimatingItemsIndicator()
                 self?.viewModel.items.accept(items)
                 self?.saveItemsToRealmDB(items: items)
-            }, onError: { error in
-                  print("tags >>>>>>>>>> \(error.localizedDescription)")
-                  self.viewController?.stopAnimatingItemsIndicator()
+                }, onError: { error in
+                    self.viewController?.stopAnimatingItemsIndicator()
+                    self.viewController?.showDefaultAlert(title: "Error get Items Per Tag", message: error.localizedDescription, actionBlock: nil)
             }).disposed(by: disposeBag)
     }
     
@@ -87,52 +131,10 @@ class TagsPresenter: TagsPresenterProtocol {
                 self?.viewModel.tags.accept(oldTags + newTags)
                 self?.viewModel.isLoading.accept(false)
                 
-            }, onError: { error in
-                 print("tags >>>>>>>>>> \(error.localizedDescription)")
-                 self.viewModel.isLoading.accept(false)
-                 self.viewController?.stopAnimating()
-            }).disposed(by: disposeBag)
-    }
-    
-    
-    
-    //MARK:- Private functions
-    private func fetchTagsFirstPage() {
-        viewController?.startAnimating()
-        viewModel.isLoading.accept(true)
-        guard let interactor = interactor else { return }
-        interactor.getTags(pageNumber: "0")
-            .filter({ $0.count != 0 })
-            .subscribe(onNext: { [weak self] tags in
-                self?.viewController?.stopAnimating()
-                self?.viewModel.tags.accept(tags)
-                self?.viewModel.firstTag.accept(tags.first)
-                self?.saveTagsToRealmDB(tags: tags)
-//                self?.viewModel.isLoading.accept(false)
                 }, onError: { error in
-                    print("tags >>>>>>>>>> \(error.localizedDescription)")
+                    self.viewModel.isLoading.accept(false)
                     self.viewController?.stopAnimating()
-//                    self.viewModel.isLoading.accept(false)
-            }).disposed(by: disposeBag)
-    }
-    
-    private func saveTagsToRealmDB(tags: [Tag]) {
-        guard let interactor = interactor else { return }
-            interactor.saveTagsToDB(tags: tags)
-                .subscribe(onNext: { _  in
-                    print("tags saved successfully WoooooW")
-                }, onError: { error in
-                    print("error saving  tags Booooooom")
-                }).disposed(by: disposeBag)
-    }
-    
-    private func saveItemsToRealmDB(items: [Item]) {
-        guard let interactor = interactor else { return }
-        interactor.saveItemsToDB(items: items)
-            .subscribe(onNext: { _  in
-                print("Items saved successfully WoooooW")
-            }, onError: { error in
-                print("error saving  Items Booooooom")
+                    self.viewController?.showDefaultAlert(title: "Error fetch Tags Next Page", message: error.localizedDescription, actionBlock: nil)
             }).disposed(by: disposeBag)
     }
     
