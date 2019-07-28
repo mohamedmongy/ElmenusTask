@@ -7,32 +7,21 @@
 //
 
 import RxSwift
+import Moya
 
 
 protocol TagsProtocol {
-     func getTags(pageNumber: String) -> Observable<[Tag]>
+     func getTags(pageNumber: String) -> Observable<TagRespone>
 }
 
 
 extension TagsProtocol {
     
-    func getTags(pageNumber: String) -> Observable<[Tag]> {
-        
-//        let tags = [Tag(name: "0 - Deserts", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2276d5d-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Deserts", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2276d5d-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Egyptian", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b22089ab-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Pasta", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2374d41-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Pasta", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2374d41-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Pasta", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2374d41-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Pasta", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2374d41-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Pasta", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2374d41-27b7-11e8-add5-0242ac110011.jpg"),
-//                    Tag(name: "0 - Pasta", urlStr: "https://s3-eu-west-1.amazonaws.com//elmenusv5/Normal/b2374d41-27b7-11e8-add5-0242ac110011.jpg")
-//        ]
-//        return Observable.just(tags)
+    func getTags(pageNumber: String) -> Observable<TagRespone> {
        let tagService = TagsService()
        return tagService.fetchTags(pageNumber: pageNumber)
-        .flatMap({ tagResponse -> Observable<[Tag]> in
-            return Observable.just(tagResponse.tags)
-        })
+        
     }
+    
+    
 }

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RealmSwift
 import RxCocoa
+import Moya
 
 
 
@@ -22,7 +23,7 @@ class TagsPresenter: TagsPresenterProtocol {
     var interactor: TagsInteractorProtocol?
     private let router: TagsRouterProtocol
     private let disposeBag = DisposeBag()
-    var viewModel =  TagsViewModel ()  
+    var viewModel = TagsViewModel()
 
     
     
@@ -66,8 +67,12 @@ class TagsPresenter: TagsPresenterProtocol {
     private func fetchTagsFirstPage() {
         viewController?.startAnimating()
         viewModel.isLoading.accept(true)
-        guard let interactor = interactor else { return }
-        interactor.getTags(pageNumber: "0")
+        interactor?.getTags(pageNumber: "0")
+            .flatMap({ tagResponse -> Observable<[Tag]> in
+                print(tagResponse)
+                return Observable.just(tagResponse.tags)
+            })
+            .debug("getTags")
             .filter({ $0.count != 0 })
             .subscribe(onNext: { [weak self] tags in
                 self?.viewController?.stopAnimating()
@@ -123,6 +128,10 @@ class TagsPresenter: TagsPresenterProtocol {
         viewModel.isLoading.accept(true)
         viewController?.startAnimating()
         interactor?.getTags(pageNumber: nextPage)
+            .flatMap({ tagResponse -> Observable<[Tag]> in
+                print(tagResponse)
+                return Observable.just(tagResponse.tags)
+            })
             .filter({ $0.count > 0 })
             .subscribe(onNext: { [weak self] newTags in
                 self?.viewController?.stopAnimating()
@@ -130,7 +139,7 @@ class TagsPresenter: TagsPresenterProtocol {
                 guard let oldTags = self?.viewModel.tags.value else { return }
                 self?.viewModel.tags.accept(oldTags + newTags)
                 self?.viewModel.isLoading.accept(false)
-                
+
                 }, onError: { error in
                     self.viewModel.isLoading.accept(false)
                     self.viewController?.stopAnimating()

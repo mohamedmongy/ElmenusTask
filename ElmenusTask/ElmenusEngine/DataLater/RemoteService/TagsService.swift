@@ -15,38 +15,29 @@ import RxReachability
 
 
 
-class TagsService {
-    
+class TagsService : APIService<TagsEndPoint> {
     
     
     func fetchTags(pageNumber: String) -> Observable<TagRespone> {
+        return request(target: .tags(pageNumber: pageNumber))
         
-        
-        if Reachability.shared.connection != .none  {
-            
-         let rxProvider = MoyaProvider<TagsEndPoint>()
-          return rxProvider.rx.request(.tags(pageNumber: pageNumber), callbackQueue: DispatchQueue.main)
-            .filterSuccessfulStatusCodes()
-            .do(onSuccess: { (res) in
-                print(res)
-            }, onError: { (error) in
-                print(error)
-            })
-                .asObservable()
-                .mapObject(TagRespone.self)
-            .do(onNext: { res in
-                print(res)
-            })
-                .catchError { error  in
-//                      guard let moyaError = error as? MoyaError else {
-//                        return Observable.error(ErrorType.unkown)
-//                    }
-                    return Observable.error(ErrorType.unkown)
-            }
-            
-        } else {
-             return Observable.error(ErrorType.noInternet)
-        }
+//        if Reachability.shared.connection != .none  {
+//
+//         let rxProvider = MoyaProvider<TagsEndPoint>()
+//          return rxProvider.rx.request(.tags(pageNumber: pageNumber))
+//            .filterSuccessfulStatusCodes()
+//
+//                .asObservable()
+//                .mapObject(TagRespone.self)
+//
+//                .catchError { error  in
+//
+//                    return Observable.error(ErrorType.unkown)
+//            }
+//
+//        } else {
+//             return Observable.error(ErrorType.noInternet)
+//        }
         
     }
     

@@ -54,7 +54,7 @@ public extension MoyaProvider {
             }
 
             var request: URLRequest!
-
+            print(requestResult)
             switch requestResult {
             case .success(let urlRequest):
                 request = urlRequest

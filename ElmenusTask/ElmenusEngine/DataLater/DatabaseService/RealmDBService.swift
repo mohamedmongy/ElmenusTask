@@ -15,7 +15,6 @@ struct RealmDBService {
     
     func saveTagsToDB(tags: [Tag]) -> Observable<Void> {
         
-        
         do {
             let realm = try! Realm()
             try realm.write {
@@ -39,7 +38,6 @@ struct RealmDBService {
     
     
     func saveItemsToDB(items: [Item]) -> Observable<Void> {
-        
         
         do {
             let realm = try! Realm()
@@ -69,7 +67,7 @@ struct RealmDBService {
         
         do {
             
-            let realm = try! Realm()
+            let realm = try Realm()
             let tags = realm.objects(TagEntity.self)
             var tagsArr: [Tag] = []
             
@@ -79,11 +77,14 @@ struct RealmDBService {
             }
             
             return Observable.just(tagsArr)
-            
         }
         catch let  error {
             return Observable.error(error)
         }
+        
+        
+            
+        
     }
     
     

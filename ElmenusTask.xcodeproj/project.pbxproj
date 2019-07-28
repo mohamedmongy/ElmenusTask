@@ -198,13 +198,13 @@
 		0208E43122E7A473007B71E9 /* TagsModule */ = {
 			isa = PBXGroup;
 			children = (
-				0208E43222E7A473007B71E9 /* ViewModel */,
 				0208E43422E7A473007B71E9 /* Contract */,
-				0208E43622E7A473007B71E9 /* Presenter */,
-				0208E44922E7B376007B71E9 /* View */,
 				0208E43B22E7A473007B71E9 /* Interactor */,
 				0208E43D22E7A473007B71E9 /* Localization */,
+				0208E43622E7A473007B71E9 /* Presenter */,
 				0208E43F22E7A473007B71E9 /* Router */,
+				0208E44922E7B376007B71E9 /* View */,
+				0208E43222E7A473007B71E9 /* ViewModel */,
 			);
 			path = TagsModule;
 			sourceTree = "<group>";
@@ -433,13 +433,13 @@
 		02E00A2F22EBBC2200357240 /* ItemDetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				02E00A3022EBBC2200357240 /* ViewModel */,
 				02E00A3222EBBC2200357240 /* Contract */,
-				02E00A3422EBBC2200357240 /* Presenter */,
-				02E00A3622EBBC2200357240 /* ViewController */,
 				02E00A3922EBBC2200357240 /* Interactor */,
 				02E00A3B22EBBC2200357240 /* Localization */,
+				02E00A3422EBBC2200357240 /* Presenter */,
 				02E00A3D22EBBC2200357240 /* Router */,
+				02E00A3622EBBC2200357240 /* ViewController */,
+				02E00A3022EBBC2200357240 /* ViewModel */,
 			);
 			path = ItemDetailModule;
 			sourceTree = "<group>";
