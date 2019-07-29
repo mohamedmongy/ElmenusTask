@@ -35,31 +35,6 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
     //MARK: -  View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let rxProvider = MoyaProvider<TagsEndPoint>()
-//        rxProvider.rx.request(.tags(pageNumber: "0"), callbackQueue: DispatchQueue.main)
-//            .subscribe { event in
-//
-//                switch event {
-//                case let .success(response):
-//                    debugPrint(response)
-//                    let resp = try! response.mapObject(TagRespone.self)
-//                    print(resp)
-//                    break
-//                case let .error(error):
-//                    print(error)
-//                    break
-//                }
-//
-//            }.disposed(by: disposeBag)
-        
-        fetchTags(pageNumber: "0")
-            .subscribe(onSuccess: { (event) in
-               let rep = try! event.mapObject(TagRespone.self)
-                print(rep)
-            }).disposed(by: disposeBag)
-        
-        
         setNavigationBarTitleColor()
         setNavighationBarUI()
         registerCollectionViewCell()
@@ -71,24 +46,6 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         BindToViewModelItems()
         bindToFirstTagViewModelToPopulateItemsCollectionVWhenTagsLoadedFirstTime()
         presenter?.attach()
-    }
-    
-    
-    func fetchTags(pageNumber: String) -> Single<Response> {
-        
-        
-        
-            let rxProvider = MoyaProvider<TagsEndPoint>()
-            return rxProvider.rx.request(.tags(pageNumber: pageNumber))
-//                .filterSuccessfulStatusCodes()
-//                .asObservable()
-//                .mapObject(TagRespone.self)
-//                .catchError { error  in
-//                    return Observable.error(ErrorType.unkown)
-//            }
-        
-       
-        
     }
     
     

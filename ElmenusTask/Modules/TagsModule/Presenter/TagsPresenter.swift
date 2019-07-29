@@ -39,7 +39,8 @@ class TagsPresenter: TagsPresenterProtocol {
     //MARK:- Attach
     func attach() {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        fetchTagsFromDBOrNewtworK()
+//        fetchTagsFromDBOrNewtworK()
+        fetchTagsFirstPage()
     }
     
     
@@ -72,7 +73,6 @@ class TagsPresenter: TagsPresenterProtocol {
                 print(tagResponse)
                 return Observable.just(tagResponse.tags)
             })
-            .debug("getTags")
             .filter({ $0.count != 0 })
             .subscribe(onNext: { [weak self] tags in
                 self?.viewController?.stopAnimating()

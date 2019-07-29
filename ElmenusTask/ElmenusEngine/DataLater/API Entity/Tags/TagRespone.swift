@@ -23,4 +23,7 @@ struct TagRespone: Mappable {
         tags <- map["tags"]
     }
     
+    init() {
+        
+    }
 }

@@ -12,34 +12,37 @@ import ObjectMapper
 import Moya_ObjectMapper
 import Reachability
 import RxReachability
+import RxCocoa
 
 
 
-class TagsService : APIService<TagsEndPoint> {
+class TagsService {
+    
+    let disposeBag = DisposeBag()
     
     
     func fetchTags(pageNumber: String) -> Observable<TagRespone> {
-        return request(target: .tags(pageNumber: pageNumber))
         
-//        if Reachability.shared.connection != .none  {
-//
-//         let rxProvider = MoyaProvider<TagsEndPoint>()
-//          return rxProvider.rx.request(.tags(pageNumber: pageNumber))
-//            .filterSuccessfulStatusCodes()
-//
-//                .asObservable()
-//                .mapObject(TagRespone.self)
-//
-//                .catchError { error  in
-//
-//                    return Observable.error(ErrorType.unkown)
-//            }
-//
-//        } else {
-//             return Observable.error(ErrorType.noInternet)
-//        }
-        
+        return Observable.create { observer -> Disposable in
+            
+            let rxProvider = MoyaProvider<TagsEndPoint>()
+             rxProvider.rx.request(.tags(pageNumber: pageNumber), callbackQueue: DispatchQueue.main)
+                
+                .subscribe { event in
+                    switch event {
+                    case let .success(response):
+                        let resp = try! response.mapObject(TagRespone.self)
+                        observer.onNext(resp)
+                        print(resp)
+                    case let .error(error):
+                        print(error)
+                        observer.onError(error)
+                    }
+                 }
+            return Disposables.create()
+        }
     }
+    
     
 }
 

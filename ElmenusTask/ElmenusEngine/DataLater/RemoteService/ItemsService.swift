@@ -15,26 +15,28 @@ import RxReachability
 
 
 
-class ItemsService: APIService<ItemsEndPoint> {
+class ItemsService {
     
     func fetchItems(tagName: String) -> Observable<ItemResponse> {
-       return  request(target: .items(tagname: tagName))
         
-//        if Reachability.shared.connection != .none  {
-//
-//            let rxProvider = MoyaProvider<ItemsEndPoint>()
-//            return rxProvider.rx.request(.items(tagname: tagName), callbackQueue: DispatchQueue.main)
-//                .filterSuccessfulStatusCodes()
-//                .asObservable()
-//                .mapObject(ItemResponse.self)
-//                .catchError { error  in
-//                    return Observable.error(ErrorType.unkown)
-//            }
-//
-//        } else {
-//            return Observable.error(ErrorType.noInternet)
-//        }
-
+        return Observable.create { observer -> Disposable in
+            
+            let rxProvider = MoyaProvider<ItemsEndPoint>()
+             rxProvider.rx.request(.items(tagname: tagName), callbackQueue: DispatchQueue.main)
+                .subscribe { event in
+                    switch event {
+                    case let .success(response):
+                        let resp = try! response.mapObject(ItemResponse.self)
+                        observer.onNext(resp)
+                        print(resp)
+                    case let .error(error):
+                        print(error)
+                        observer.onError(error)
+                    }
+            }
+            
+            return Disposables.create()
+        }
     }
     
 }

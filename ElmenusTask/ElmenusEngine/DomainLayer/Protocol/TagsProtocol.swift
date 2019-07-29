@@ -8,6 +8,7 @@
 
 import RxSwift
 import Moya
+import RxCocoa
 
 
 protocol TagsProtocol {
@@ -20,7 +21,6 @@ extension TagsProtocol {
     func getTags(pageNumber: String) -> Observable<TagRespone> {
        let tagService = TagsService()
        return tagService.fetchTags(pageNumber: pageNumber)
-        
     }
     
     
