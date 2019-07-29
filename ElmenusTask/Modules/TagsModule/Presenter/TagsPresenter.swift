@@ -76,11 +76,13 @@ class TagsPresenter: TagsPresenterProtocol {
             .subscribe(onNext: { [weak self] tags in
                 self?.viewController?.stopAnimating()
                 self?.viewModel.tags.accept(tags)
+                self?.viewModel.isLoading.accept(false)
                 self?.viewModel.firstTag.accept(tags.first)
                 self?.saveTagsToRealmDB(tags: tags)
                 }, onError: { error in
                     self.viewController?.stopAnimating()
                     self.viewController?.showDefaultAlert(title: "Fetch tags First Page from API", message: error.localizedDescription, actionBlock: nil)
+                    self.viewModel.isLoading.accept(false)
             }).disposed(by: disposeBag)
     }
     

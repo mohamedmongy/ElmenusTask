@@ -92,7 +92,6 @@ class TagsViewController: UIViewController, TagsViewControllerProtocol {
         tagsCollectionView.rx.reachedRight
             .skip(2)
             .subscribe(onNext: {  _ in
-                presenter.viewModel.isLoading.accept(false)
                 guard let isLoading = presenter.viewModel.isLoading.value else { return }
                 if !isLoading {
                     presenter.viewModel.page.accept(presenter.viewModel.page.value + 1)

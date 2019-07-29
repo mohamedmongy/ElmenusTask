@@ -26,16 +26,14 @@ class TagsService {
         return Observable.create { observer -> Disposable in
             
             let rxProvider = MoyaProvider<TagsEndPoint>()
-             rxProvider.rx.request(.tags(pageNumber: pageNumber), callbackQueue: DispatchQueue.main)
+             rxProvider.rx.request(.tags(pageNumber: pageNumber))
                 
                 .subscribe { event in
                     switch event {
                     case let .success(response):
                         let resp = try! response.mapObject(TagRespone.self)
                         observer.onNext(resp)
-                        print(resp)
                     case let .error(error):
-                        print(error)
                         observer.onError(error)
                     }
                  }

@@ -296,8 +296,6 @@
 			children = (
 				021E476822EC7AA1005E4C54 /* EntityApi+DB */,
 				02E00A1F22EAF6E400357240 /* DatabaseService */,
-				0208E45722E7C7B8007B71E9 /* EndPoint */,
-				0208E45822E7C7C1007B71E9 /* RemoteService */,
 			);
 			path = DataLater;
 			sourceTree = "<group>";
@@ -305,6 +303,8 @@
 		0208E45122E7C439007B71E9 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0208E45822E7C7C1007B71E9 /* RemoteService */,
+				0208E45722E7C7B8007B71E9 /* EndPoint */,
 				02E00A1C22EAF01F00357240 /* Protocol */,
 			);
 			path = DomainLayer;

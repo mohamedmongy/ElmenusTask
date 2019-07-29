@@ -28,13 +28,10 @@ class ItemsService {
                     case let .success(response):
                         let resp = try! response.mapObject(ItemResponse.self)
                         observer.onNext(resp)
-                        print(resp)
                     case let .error(error):
-                        print(error)
                         observer.onError(error)
                     }
             }
-            
             return Disposables.create()
         }
     }
