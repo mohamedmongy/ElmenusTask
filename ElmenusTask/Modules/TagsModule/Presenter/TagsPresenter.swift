@@ -39,8 +39,7 @@ class TagsPresenter: TagsPresenterProtocol {
     //MARK:- Attach
     func attach() {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-//        fetchTagsFromDBOrNewtworK()
-        fetchTagsFirstPage()
+        fetchTagsFromDBOrNewtworK()
     }
     
     
